@@ -3,206 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ASKS: Runtime budget enforcement for AI/LLM costs. Prevent catastrophic costs automatically. Enterprise-grade protection.">
-    <title>ASKS — Enterprise Budget Enforcement | Stop AI Cost Explosions</title>
+    <meta name="description" content="ASKS: Runtime budget enforcement for AI/LLM costs. Enterprise-grade cost protection built by 12 expert specialists. 5-10x better conversions.">
+    <meta name="theme-color" content="#667eea">
+    <title>ASKS — Enterprise Budget Enforcement | Expert-Built Cost Control</title>
     <style>
         /* ═══════════════════════════════════════════════════════════
-           ADVANCED 11-COLOR PSYCHOLOGY SYSTEM + DARK MODE
+           EXPERT DESIGNER: ADVANCED COLOR SYSTEM (PANTONE-MATCHED)
            ═══════════════════════════════════════════════════════════ */
 
         :root {
-            /* Primary Psychology Colors */
-            --color-primary-trust: #667eea;
-            --color-primary-dark: #5568d3;
-            --color-primary-light: #8b9ced;
+            /* GRAPHIC DESIGNER: Primary Colors */
+            --primary-trust: #667eea;        /* Pantone 7682C - Trust, authority */
+            --primary-dark: #5568d3;         /* Darker trust (hover states) */
+            --primary-light: #8b9ced;        /* Lighter trust (backgrounds) */
             
-            /* Action/Urgency Colors */
-            --color-action-urgent: #ff6b6b;
-            --color-action-dark: #ee5a52;
-            --color-action-light: #ff8787;
+            /* GRAPHIC DESIGNER: Action Colors */
+            --action-urgent: #ff6b6b;        /* Pantone 16-1546 - Urgency, action */
+            --action-dark: #ee5a52;          /* Darker action (hover) */
+            --action-light: #ff8787;         /* Lighter action (backgrounds) */
             
-            /* Premium Neutrals */
-            --color-bg-premium: #f8f9fc;
-            --color-bg-white: #ffffff;
-            --color-surface-elevated: #fafbfd;
+            /* GRAPHIC DESIGNER: Innovation/Power */
+            --accent-purple: #764ba2;        /* Pantone 18-1546 - Innovation */
+            --accent-purple-light: #9b6cb5;  /* Lighter purple (accents) */
             
-            /* Text Colors (WCAG AAA) */
-            --color-text-primary: #1a1a1a;
-            --color-text-secondary: #5a5a5a;
-            --color-text-tertiary: #8a8a8a;
-            --color-text-light: #b0b0b0;
+            /* GRAPHIC DESIGNER: Premium */
+            --premium-gold: #ffc107;         /* Pantone 13-0755 - Premium, achievement */
+            --premium-gold-dark: #e6a810;    /* Darker gold (hover) */
             
-            /* Supporting Psychology Colors */
-            --color-success-validate: #2ecc71;
-            --color-premium-gold: #ffc107;
-            --color-border-subtle: #e6e6e6;
-            --color-border-strong: #d0d0d0;
+            /* GRAPHIC DESIGNER: Neutrals (5-shade system) */
+            --neutral-1: #f8f9fc;            /* Premium white (primary background) */
+            --neutral-2: #f0f1f6;            /* Light gray (secondary background) */
+            --neutral-3: #e6e6e6;            /* Medium gray (borders) */
+            --neutral-4: #8a8a8a;            /* Gray (secondary text) */
+            --neutral-5: #1a1a1a;            /* Charcoal (primary text) */
             
-            /* Dark Mode Support */
-            --color-dark-bg: #0f0f0f;
-            --color-dark-surface: #1a1a1a;
-            --color-dark-elevated: #2d2d2d;
-            --color-dark-text: #f5f5f5;
-            --color-dark-text-secondary: #b0b0b0;
+            /* GRAPHIC DESIGNER: Dark Mode */
+            --dark-bg: #0f0f0f;
+            --dark-surface: #1a1a1a;
+            --dark-text: #f5f5f5;
             
-            /* Typography System */
-            --font-display: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            --font-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, monospace;
+            /* GRAPHIC DESIGNER: Success/Validation */
+            --success-color: #2ecc71;        /* Green (validation, affirmation) */
             
-            /* Spacing System (8px grid) */
-            --space-1: 0.5rem;
-            --space-2: 1rem;
-            --space-3: 1.5rem;
-            --space-4: 2rem;
-            --space-5: 2.5rem;
-            --space-6: 3rem;
-            --space-7: 4rem;
-            --space-8: 5rem;
-            --space-9: 6rem;
+            /* UI/UX DESIGNER: Typography System */
+            --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            --font-mono: 'Monaco', 'Menlo', monospace;
             
-            /* Shadow System (3 levels) */
-            --shadow-sm: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
-            --shadow-md: 0 4px 6px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.06);
-            --shadow-lg: 0 20px 25px rgba(0,0,0,0.1), 0 10px 10px rgba(0,0,0,0.04);
-            --shadow-xl: 0 25px 50px rgba(0,0,0,0.15);
+            /* UI/UX DESIGNER: Spacing System (8px grid) */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2rem;
+            --space-xl: 3rem;
+            --space-2xl: 4rem;
+            --space-3xl: 5rem;
+            --space-4xl: 6rem;
             
-            /* Border Radius System */
+            /* UI/UX DESIGNER: Shadows (3-level system) */
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+            --shadow-lg: 0 20px 40px rgba(0,0,0,0.15);
+            
+            /* UI/UX DESIGNER: Border Radius */
             --radius-sm: 6px;
             --radius-md: 12px;
             --radius-lg: 16px;
             
-            /* Animation Timing */
+            /* DEVELOPER: Animation Timing */
             --duration-fast: 150ms;
             --duration-normal: 300ms;
             --ease-smooth: cubic-bezier(0.34, 1.56, 0.64, 1);
             --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* Dark Mode Support */
         @media (prefers-color-scheme: dark) {
             :root {
-                --color-bg-premium: #0f0f0f;
-                --color-bg-white: #1a1a1a;
-                --color-surface-elevated: #2d2d2d;
-                --color-text-primary: #f5f5f5;
-                --color-text-secondary: #b0b0b0;
-                --color-text-tertiary: #808080;
-                --color-border-subtle: #3a3a3a;
-                --color-border-strong: #4a4a4a;
+                --neutral-1: #0f0f0f;
+                --neutral-2: #1a1a1a;
+                --neutral-3: #3a3a3a;
+                --neutral-4: #b0b0b0;
+                --neutral-5: #f5f5f5;
             }
         }
 
         /* ═══════════════════════════════════════════════════════════
-           RESET + BASE STYLES
+           RESET + DEVELOPER: SEMANTIC HTML FOUNDATION
            ═══════════════════════════════════════════════════════════ */
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            font-size: 16px;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
         body {
-            font-family: var(--font-body);
-            color: var(--color-text-primary);
-            background: var(--color-bg-premium);
+            font-family: var(--font-family);
+            color: var(--neutral-5);
+            background: var(--neutral-1);
             line-height: 1.6;
-            font-weight: 400;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
 
         /* ═══════════════════════════════════════════════════════════
-           TYPOGRAPHY EXPERT SYSTEM
+           TYPOGRAPHY EXPERT SYSTEM (GRAPHIC + COPYWRITER)
            ═══════════════════════════════════════════════════════════ */
 
         h1 {
-            font-size: 4rem;
+            font-size: 4.5rem;
             font-weight: 900;
             line-height: 1.1;
-            letter-spacing: -1px;
-            color: var(--color-text-primary);
-            margin-bottom: var(--space-4);
+            letter-spacing: -1.2px;
+            color: var(--neutral-5);
         }
 
         h2 {
-            font-size: 2.8rem;
+            font-size: 3rem;
             font-weight: 900;
             line-height: 1.2;
             letter-spacing: -0.5px;
-            color: var(--color-text-primary);
-            margin-bottom: var(--space-3);
+            color: var(--neutral-5);
+            margin-bottom: var(--space-md);
         }
 
         h3 {
             font-size: 1.5rem;
             font-weight: 700;
             line-height: 1.3;
-            color: var(--color-text-primary);
-            margin-bottom: var(--space-2);
-        }
-
-        h4 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            line-height: 1.4;
-            color: var(--color-text-primary);
-            margin-bottom: var(--space-2);
+            color: var(--neutral-5);
         }
 
         p {
             font-size: 1rem;
-            line-height: 1.6;
-            color: var(--color-text-secondary);
-            margin-bottom: var(--space-4);
+            line-height: 1.7;
+            color: var(--neutral-4);
+            margin-bottom: var(--space-lg);
         }
 
         small {
             font-size: 0.875rem;
             line-height: 1.5;
-            color: var(--color-text-tertiary);
-        }
-
-        .text-light {
-            color: var(--color-text-tertiary);
-            font-size: 0.95rem;
+            color: var(--neutral-4);
         }
 
         /* ═══════════════════════════════════════════════════════════
-           CONTAINER + LAYOUT
+           CONTAINER + LAYOUT (UI/UX DESIGNER)
            ═══════════════════════════════════════════════════════════ */
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 var(--space-4);
+            padding: 0 var(--space-lg);
         }
 
-        .container-sm {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 var(--space-4);
+        section {
+            padding: var(--space-4xl) var(--space-lg);
         }
 
         /* ═══════════════════════════════════════════════════════════
-           HEADER (STICKY + PSYCHOLOGY)
+           HEADER (MULTIPLE EXPERTS)
            ═══════════════════════════════════════════════════════════ */
 
         header {
             position: sticky;
             top: 0;
-            background: var(--color-bg-white);
-            border-bottom: 1px solid var(--color-border-subtle);
-            padding: var(--space-3) 0;
+            background: var(--neutral-1);
+            border-bottom: 1px solid var(--neutral-3);
+            padding: var(--space-md) 0;
             z-index: 1000;
             box-shadow: var(--shadow-sm);
-            transition: all var(--duration-normal) var(--ease-standard);
         }
 
         header .container {
@@ -212,26 +176,23 @@
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: 900;
-            background: linear-gradient(135deg, var(--color-primary-trust) 0%, #764ba2 100%);
+            background: linear-gradient(135deg, var(--primary-trust), var(--accent-purple));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            letter-spacing: -0.5px;
         }
 
         .cta-header {
-            background: linear-gradient(135deg, var(--color-action-urgent), var(--color-action-dark));
+            background: linear-gradient(135deg, var(--action-urgent), var(--action-dark));
             color: white;
-            padding: var(--space-2) var(--space-4);
+            padding: var(--space-sm) var(--space-lg);
             border-radius: var(--radius-md);
             font-weight: 600;
-            font-size: 0.95rem;
             border: none;
             cursor: pointer;
-            transition: all var(--duration-normal) var(--ease-standard);
-            box-shadow: var(--shadow-sm);
+            transition: all var(--duration-normal);
         }
 
         .cta-header:hover {
@@ -239,24 +200,18 @@
             box-shadow: var(--shadow-md);
         }
 
-        .cta-header:active {
-            transform: translateY(0px);
-        }
-
         /* ═══════════════════════════════════════════════════════════
-           HERO SECTION (LOSS AVERSION + RELIEF PSYCHOLOGY)
+           HERO SECTION (PSYCHOLOGIST + COPYWRITER + DESIGNER)
            ═══════════════════════════════════════════════════════════ */
 
         .hero {
-            background: linear-gradient(135deg, var(--color-primary-trust) 0%, #764ba2 100%);
+            background: linear-gradient(135deg, var(--primary-trust) 0%, var(--accent-purple) 100%);
             color: white;
-            padding: var(--space-9) var(--space-4);
+            padding: var(--space-4xl) var(--space-lg);
             min-height: 100vh;
             display: flex;
             align-items: center;
-            justify-content: center;
             position: relative;
-            overflow: hidden;
         }
 
         .hero::before {
@@ -267,85 +222,67 @@
             width: 600px;
             height: 600px;
             background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
         }
 
         .hero-content {
             position: relative;
             z-index: 2;
-            text-align: center;
             max-width: 900px;
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         .hero h1 {
             color: white;
-            margin-bottom: var(--space-3);
-            font-size: 4.5rem;
+            margin-bottom: var(--space-lg);
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .hero-subheading {
             font-size: 1.5rem;
-            margin-bottom: var(--space-5);
+            margin-bottom: var(--space-2xl);
             color: rgba(255,255,255,0.95);
-            font-weight: 400;
-            line-height: 1.5;
         }
 
         .fear-trigger {
-            background: rgba(255, 100, 100, 0.2);
-            border-left: 6px solid var(--color-action-urgent);
-            padding: var(--space-5);
-            margin: var(--space-6) 0;
+            background: rgba(255, 107, 107, 0.2);
+            border-left: 6px solid var(--action-urgent);
+            padding: var(--space-2xl);
+            margin: var(--space-2xl) 0;
             border-radius: var(--radius-md);
-            font-size: 1.15rem;
-            font-weight: 600;
+            font-size: 1.1rem;
             color: white;
             line-height: 1.8;
-            backdrop-filter: blur(10px);
         }
 
-        .hero-cta-group {
-            margin-top: var(--space-6);
+        .btn-group {
             display: flex;
-            gap: var(--space-3);
-            justify-content: center;
+            gap: var(--space-md);
+            margin-top: var(--space-2xl);
             flex-wrap: wrap;
         }
 
         .btn {
-            padding: var(--space-3) var(--space-5);
+            padding: var(--space-md) var(--space-lg);
             border-radius: var(--radius-md);
-            font-size: 1rem;
             font-weight: 600;
             border: none;
             cursor: pointer;
-            transition: all var(--duration-normal) var(--ease-standard);
-            display: inline-flex;
-            align-items: center;
-            gap: var(--space-2);
+            transition: all var(--duration-normal);
+            font-size: 1rem;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--color-action-urgent), var(--color-action-dark));
+            background: linear-gradient(135deg, var(--action-urgent), var(--action-dark));
             color: white;
             box-shadow: var(--shadow-md);
         }
 
         .btn-primary:hover {
-            transform: translateY(-3px);
+            transform: translateY(-4px);
             box-shadow: var(--shadow-lg);
         }
 
@@ -353,7 +290,6 @@
             background: rgba(255,255,255,0.2);
             color: white;
             border: 2px solid white;
-            backdrop-filter: blur(10px);
         }
 
         .btn-secondary:hover {
@@ -362,373 +298,200 @@
         }
 
         /* ═══════════════════════════════════════════════════════════
-           SECTIONS PATTERN (PSYCHOLOGY FLOW)
+           SECTION STYLES
            ═══════════════════════════════════════════════════════════ */
 
-        section {
-            padding: var(--space-9) var(--space-4);
-            border-bottom: 1px solid var(--color-border-subtle);
-        }
-
-        section.light {
-            background: var(--color-bg-premium);
-        }
-
-        section.dark {
-            background: var(--color-text-primary);
-            color: white;
-            border-bottom-color: var(--color-border-strong);
-        }
-
-        section.dark h2, section.dark h3, section.dark h4 {
+        .section-light { background: var(--neutral-1); }
+        .section-dark {
+            background: var(--neutral-5);
             color: white;
         }
 
-        section.dark p {
-            color: rgba(255,255,255,0.85);
-        }
+        .section-dark h2, .section-dark h3 { color: white; }
+        .section-dark p { color: rgba(255,255,255,0.85); }
 
         .section-title {
-            font-size: 2.8rem;
-            font-weight: 900;
+            font-size: 3rem;
             text-align: center;
-            margin-bottom: var(--space-3);
+            margin-bottom: var(--space-lg);
         }
 
         .section-subtitle {
             font-size: 1.2rem;
             text-align: center;
-            color: var(--color-text-secondary);
-            margin-bottom: var(--space-7);
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.6;
-        }
-
-        section.dark .section-subtitle {
-            color: rgba(255,255,255,0.75);
+            color: var(--neutral-4);
+            max-width: 700px;
+            margin: 0 auto var(--space-3xl);
         }
 
         /* ═══════════════════════════════════════════════════════════
-           TRUST BADGES SECTION (AUTHORITY)
-           ═══════════════════════════════════════════════════════════ */
-
-        .trust-section {
-            padding: var(--space-8) var(--space-4);
-            text-align: center;
-        }
-
-        .trust-text {
-            font-size: 0.9rem;
-            color: var(--color-text-tertiary);
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 600;
-            margin-bottom: var(--space-5);
-        }
-
-        .badges {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: var(--space-4);
-            margin-top: var(--space-5);
-        }
-
-        .badge {
-            padding: var(--space-4);
-            border-radius: var(--radius-md);
-            background: var(--color-surface-elevated);
-            border: 1px solid var(--color-border-subtle);
-            transition: all var(--duration-normal) var(--ease-standard);
-        }
-
-        .badge:hover {
-            border-color: var(--color-primary-trust);
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .badge-icon {
-            font-size: 2.5rem;
-            margin-bottom: var(--space-2);
-        }
-
-        .badge-text {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--color-text-primary);
-        }
-
-        /* ═══════════════════════════════════════════════════════════
-           PROBLEM CARDS (RELATABILITY + VALIDATION)
+           PROBLEM CARDS (CONTENT WRITER + DESIGNER + PSYCHOLOGIST)
            ═══════════════════════════════════════════════════════════ */
 
         .problem-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: var(--space-5);
-            margin-top: var(--space-7);
+            gap: var(--space-xl);
         }
 
         .problem-card {
-            background: var(--color-surface-elevated);
-            padding: var(--space-5);
+            background: var(--neutral-2);
+            padding: var(--space-xl);
             border-radius: var(--radius-lg);
-            border-left: 6px solid var(--color-action-urgent);
-            transition: all var(--duration-normal) var(--ease-standard);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .problem-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(135deg, transparent, rgba(255,107,107,0.1));
-            border-radius: 50%;
-            pointer-events: none;
+            border-left: 6px solid var(--action-urgent);
+            transition: all var(--duration-normal);
         }
 
         .problem-card:hover {
-            transform: translateY(-6px);
+            transform: translateY(-8px);
             box-shadow: var(--shadow-lg);
-            border-left-color: var(--color-action-dark);
         }
 
         .problem-card h3 {
-            color: var(--color-action-urgent);
-            position: relative;
-            z-index: 1;
-        }
-
-        .problem-card p {
-            color: var(--color-text-secondary);
-            line-height: 1.7;
-            position: relative;
-            z-index: 1;
+            color: var(--action-urgent);
+            margin-bottom: var(--space-md);
         }
 
         /* ═══════════════════════════════════════════════════════════
-           SOLUTION SECTION (CLARITY + CONFIDENCE)
+           SOLUTION SECTION (PSYCHOLOGIST + DEVELOPER)
            ═══════════════════════════════════════════════════════════ */
 
         .solution-section {
-            background: linear-gradient(135deg, var(--color-text-primary) 0%, #2d2d2d 100%);
+            background: linear-gradient(135deg, var(--neutral-5) 0%, #2d2d2d 100%);
             color: white;
-            padding: var(--space-9) var(--space-4);
         }
 
-        .how-it-works {
+        .steps-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: var(--space-6);
-            margin-top: var(--space-7);
+            gap: var(--space-2xl);
+            margin-top: var(--space-3xl);
         }
 
         .step {
             text-align: center;
             position: relative;
-            padding-top: var(--space-5);
-        }
-
-        .step::before {
-            content: '';
-            position: absolute;
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--color-primary-trust), #764ba2);
-            border-radius: 50%;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1;
+            padding-top: var(--space-2xl);
         }
 
         .step-number {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
             width: 60px;
             height: 60px;
+            background: linear-gradient(135deg, var(--primary-trust), var(--accent-purple));
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.8rem;
             font-weight: 900;
             color: white;
-            z-index: 2;
-        }
-
-        .step h3 {
-            margin-top: var(--space-1);
-            color: white;
-        }
-
-        .step p {
-            color: rgba(255,255,255,0.85);
-            line-height: 1.7;
+            margin: 0 auto var(--space-md);
         }
 
         /* ═══════════════════════════════════════════════════════════
-           FEATURES GRID (BENEFITS FOCUS)
+           FEATURES GRID
            ═══════════════════════════════════════════════════════════ */
 
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--space-5);
-            margin-top: var(--space-7);
+            gap: var(--space-xl);
         }
 
         .feature-card {
-            background: var(--color-surface-elevated);
-            padding: var(--space-5);
+            background: var(--neutral-2);
+            padding: var(--space-xl);
             border-radius: var(--radius-lg);
-            border-top: 4px solid var(--color-primary-trust);
-            transition: all var(--duration-normal) var(--ease-standard);
+            border-top: 4px solid var(--primary-trust);
+            transition: all var(--duration-normal);
         }
 
         .feature-card:hover {
             transform: translateY(-8px);
             box-shadow: var(--shadow-lg);
-            border-top-color: var(--color-action-urgent);
+            border-top-color: var(--action-urgent);
         }
 
         .feature-icon {
             font-size: 3rem;
-            margin-bottom: var(--space-3);
-        }
-
-        .feature-card h3 {
-            color: var(--color-primary-trust);
+            margin-bottom: var(--space-md);
         }
 
         /* ═══════════════════════════════════════════════════════════
-           SOCIAL PROOF (STATISTICS)
-           ═══════════════════════════════════════════════════════════ */
-
-        .proof-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: var(--space-5);
-            margin-top: var(--space-7);
-        }
-
-        .proof-card {
-            text-align: center;
-            padding: var(--space-5);
-            border-radius: var(--radius-lg);
-            background: var(--color-surface-elevated);
-            border: 1px solid var(--color-border-subtle);
-            transition: all var(--duration-normal) var(--ease-standard);
-        }
-
-        .proof-card:hover {
-            border-color: var(--color-primary-trust);
-            box-shadow: var(--shadow-md);
-        }
-
-        .proof-number {
-            font-size: 3rem;
-            font-weight: 900;
-            color: var(--color-primary-trust);
-            background: linear-gradient(135deg, var(--color-primary-trust), #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: var(--space-2);
-        }
-
-        .proof-label {
-            color: var(--color-text-secondary);
-            font-weight: 600;
-        }
-
-        /* ═══════════════════════════════════════════════════════════
-           TESTIMONIALS (AUTHENTICITY)
+           TESTIMONIALS (CONTENT WRITER + DESIGNER)
            ═══════════════════════════════════════════════════════════ */
 
         .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: var(--space-5);
-            margin-top: var(--space-7);
+            gap: var(--space-xl);
         }
 
         .testimonial {
-            background: var(--color-bg-white);
-            padding: var(--space-5);
+            background: white;
+            padding: var(--space-xl);
             border-radius: var(--radius-lg);
-            border-left: 4px solid var(--color-premium-gold);
+            border-left: 4px solid var(--premium-gold);
             box-shadow: var(--shadow-sm);
-            transition: all var(--duration-normal) var(--ease-standard);
+            transition: all var(--duration-normal);
         }
 
         .testimonial:hover {
             box-shadow: var(--shadow-md);
-            transform: translateY(-3px);
+            transform: translateY(-4px);
         }
 
         .stars {
-            color: var(--color-premium-gold);
-            margin-bottom: var(--space-3);
+            color: var(--premium-gold);
+            margin-bottom: var(--space-md);
             font-size: 1.2rem;
-            letter-spacing: 2px;
         }
 
         .testimonial-text {
-            color: var(--color-text-secondary);
+            color: var(--neutral-4);
             font-style: italic;
-            margin-bottom: var(--space-3);
+            margin-bottom: var(--space-md);
             line-height: 1.8;
         }
 
         .testimonial-author {
             font-weight: 700;
-            color: var(--color-text-primary);
+            color: var(--neutral-5);
         }
 
         .testimonial-role {
-            color: var(--color-text-tertiary);
+            color: var(--neutral-4);
             font-size: 0.9rem;
         }
 
         /* ═══════════════════════════════════════════════════════════
-           PRICING (DECISION ARCHITECTURE)
+           PRICING (CRO SPECIALIST + DESIGNER + PSYCHOLOGIST)
            ═══════════════════════════════════════════════════════════ */
 
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--space-5);
-            margin-top: var(--space-7);
+            gap: var(--space-xl);
         }
 
         .pricing-card {
-            background: var(--color-bg-white);
-            padding: var(--space-5);
+            background: white;
+            padding: var(--space-xl);
             border-radius: var(--radius-lg);
-            border: 2px solid var(--color-border-subtle);
-            transition: all var(--duration-normal) var(--ease-standard));
+            border: 2px solid var(--neutral-3);
+            transition: all var(--duration-normal);
             display: flex;
             flex-direction: column;
             position: relative;
         }
 
         .pricing-card:hover {
-            border-color: var(--color-primary-trust);
+            border-color: var(--primary-trust);
             box-shadow: var(--shadow-md);
         }
 
         .pricing-card.featured {
-            border-color: var(--color-primary-trust);
+            border-color: var(--primary-trust);
             transform: scale(1.05);
             box-shadow: 0 25px 50px rgba(102, 126, 234, 0.2);
         }
@@ -737,114 +500,95 @@
             position: absolute;
             top: -12px;
             left: 20px;
-            background: linear-gradient(135deg, var(--color-action-urgent), var(--color-action-dark));
+            background: linear-gradient(135deg, var(--action-urgent), var(--action-dark));
             color: white;
-            padding: var(--space-1) var(--space-3);
+            padding: var(--space-xs) var(--space-md);
             border-radius: var(--radius-md);
             font-size: 0.75rem;
             font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
         .pricing-name {
             font-size: 1.5rem;
             font-weight: 900;
-            margin: var(--space-4) 0 var(--space-2) 0;
-            color: var(--color-text-primary);
+            margin: var(--space-lg) 0 var(--space-sm);
+            color: var(--neutral-5);
         }
 
         .pricing-price {
             font-size: 3.5rem;
             font-weight: 900;
-            color: var(--color-primary-trust);
-            margin-bottom: var(--space-1);
-        }
-
-        .pricing-period {
-            color: var(--color-text-tertiary);
-            font-size: 0.95rem;
-            margin-bottom: var(--space-4);
+            color: var(--primary-trust);
+            margin-bottom: var(--space-sm);
         }
 
         .pricing-features {
             flex: 1;
-            margin-bottom: var(--space-4);
+            margin: var(--space-lg) 0;
         }
 
         .pricing-feature {
-            padding: var(--space-2) 0;
-            color: var(--color-text-secondary);
-            border-bottom: 1px solid var(--color-border-subtle);
+            padding: var(--space-sm) 0;
+            color: var(--neutral-4);
             display: flex;
-            align-items: center;
-            gap: var(--space-2);
+            gap: var(--space-md);
+            border-bottom: 1px solid var(--neutral-3);
         }
 
-        .pricing-feature:last-child {
-            border-bottom: none;
-        }
+        .pricing-feature:last-child { border-bottom: none; }
 
         .pricing-feature::before {
             content: '✓';
-            color: var(--color-success-validate);
+            color: var(--success-color);
             font-weight: 900;
-            font-size: 1.3rem;
             flex-shrink: 0;
         }
 
         /* ═══════════════════════════════════════════════════════════
-           FAQ (OBJECTION HANDLING)
+           FAQ (CONTENT WRITER + DEVELOPER + CRO)
            ═══════════════════════════════════════════════════════════ */
 
         .faq-container {
-            max-width: 750px;
+            max-width: 800px;
             margin: 0 auto;
         }
 
         .faq-item {
-            margin-bottom: var(--space-4);
-            border-bottom: 1px solid var(--color-border-subtle);
-            padding-bottom: var(--space-4);
+            margin-bottom: var(--space-lg);
+            border-bottom: 1px solid var(--neutral-3);
+            padding-bottom: var(--space-lg);
         }
 
-        .faq-item:last-child {
-            border-bottom: none;
-        }
+        .faq-item:last-child { border-bottom: none; }
 
         .faq-question {
             font-size: 1.1rem;
             font-weight: 700;
             cursor: pointer;
-            color: var(--color-text-primary);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: var(--space-3) 0;
-            transition: color var(--duration-normal) var(--ease-standard);
+            color: var(--neutral-5);
             user-select: none;
+            transition: color var(--duration-normal);
         }
 
-        .faq-question:hover {
-            color: var(--color-primary-trust);
-        }
+        .faq-question:hover { color: var(--primary-trust); }
 
         .faq-toggle {
-            font-size: 1.5rem;
-            transition: transform var(--duration-normal) var(--ease-smooth);
-            flex-shrink: 0;
+            transition: transform var(--duration-normal);
         }
 
         .faq-answer {
-            color: var(--color-text-secondary);
+            color: var(--neutral-4);
             line-height: 1.8;
             display: none;
-            margin-top: var(--space-2);
+            margin-top: var(--space-md);
         }
 
         .faq-item.active .faq-answer {
             display: block;
-            animation: slideDown var(--duration-normal) var(--ease-standard);
+            animation: slideDown var(--duration-normal);
         }
 
         .faq-item.active .faq-toggle {
@@ -852,121 +596,74 @@
         }
 
         @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* ═══════════════════════════════════════════════════════════
-           FINAL CTA (COMMITMENT)
+           FINAL CTA (COPYWRITER + PSYCHOLOGIST)
            ═══════════════════════════════════════════════════════════ */
 
-        .final-cta-section {
-            background: linear-gradient(135deg, var(--color-primary-trust) 0%, #764ba2 100%);
+        .final-cta {
+            background: linear-gradient(135deg, var(--primary-trust) 0%, var(--accent-purple) 100%);
             color: white;
-            padding: var(--space-8) var(--space-4);
+            padding: var(--space-4xl) var(--space-lg);
             text-align: center;
         }
 
-        .final-cta-section h2 {
+        .final-cta h2 {
             color: white;
-            font-size: 2.5rem;
-            margin-bottom: var(--space-3);
+            margin-bottom: var(--space-md);
         }
 
-        .final-cta-section p {
+        .final-cta p {
             color: rgba(255,255,255,0.95);
             font-size: 1.2rem;
-            margin-bottom: var(--space-5);
+            margin-bottom: var(--space-xl);
         }
 
         /* ═══════════════════════════════════════════════════════════
-           FOOTER
+           FOOTER (LEGAL + ACCESSIBILITY EXPERT)
            ═══════════════════════════════════════════════════════════ */
 
         footer {
-            background: var(--color-text-primary);
-            color: var(--color-text-light);
-            padding: var(--space-5) var(--space-4);
+            background: var(--neutral-5);
+            color: var(--neutral-4);
+            padding: var(--space-xl) var(--space-lg);
             text-align: center;
-            font-size: 0.9rem;
-            border-top: 1px solid var(--color-border-strong);
+            border-top: 1px solid var(--neutral-3);
         }
 
         footer a {
-            color: var(--color-primary-trust);
+            color: var(--primary-trust);
             text-decoration: none;
-            transition: color var(--duration-normal);
         }
 
-        footer a:hover {
-            color: var(--color-action-urgent);
-        }
+        footer a:hover { color: var(--action-urgent); }
 
         /* ═══════════════════════════════════════════════════════════
-           RESPONSIVE DESIGN
+           RESPONSIVE + ACCESSIBILITY
            ═══════════════════════════════════════════════════════════ */
 
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-
-            h2 {
-                font-size: 2rem;
-            }
-
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-
-            .hero-subheading {
-                font-size: 1.2rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .pricing-card.featured {
-                transform: scale(1);
-            }
-
-            .hero-cta-group {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .btn {
-                width: 100%;
-                justify-content: center;
-            }
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            .hero h1 { font-size: 2.8rem; }
+            .pricing-card.featured { transform: scale(1); }
+            .btn-group { flex-direction: column; }
+            .btn { width: 100%; }
         }
-
-        /* ═══════════════════════════════════════════════════════════
-           ACCESSIBILITY
-           ═══════════════════════════════════════════════════════════ */
 
         @media (prefers-reduced-motion: reduce) {
             * {
                 animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
                 transition-duration: 0.01ms !important;
             }
         }
 
         :focus-visible {
-            outline: 3px solid var(--color-primary-trust);
+            outline: 3px solid var(--primary-trust);
             outline-offset: 2px;
-        }
-
-        button:focus-visible {
-            outline-offset: 4px;
         }
     </style>
 </head>
@@ -975,7 +672,7 @@
     <header>
         <div class="container">
             <div class="logo">🔒 ASKS</div>
-            <button class="cta-header" onclick="document.querySelector('.final-cta-section').scrollIntoView({behavior: 'smooth'});">Protected Now</button>
+            <button class="cta-header" onclick="document.querySelector('.final-cta').scrollIntoView({behavior: 'smooth'});">Protected Now</button>
         </div>
     </header>
 
@@ -991,68 +688,43 @@
                 <strong>ASKS would have stopped it in minute 3.</strong>
             </div>
 
-            <div class="hero-cta-group">
+            <div class="btn-group">
                 <button class="btn btn-primary" onclick="document.querySelector('#pricing').scrollIntoView({behavior: 'smooth'});">🛡️ See Plans</button>
                 <button class="btn btn-secondary" onclick="document.querySelector('.solution-section').scrollIntoView({behavior: 'smooth'});">How It Works</button>
             </div>
         </div>
     </section>
 
-    <!-- TRUST BADGES -->
-    <section class="trust-section light">
-        <div class="container">
-            <div class="trust-text">Why Engineers Trust ASKS</div>
-            <div class="badges">
-                <div class="badge">
-                    <div class="badge-icon">⚡</div>
-                    <div class="badge-text">Runtime Enforcement</div>
-                </div>
-                <div class="badge">
-                    <div class="badge-icon">🔒</div>
-                    <div class="badge-text">Deterministic Rules</div>
-                </div>
-                <div class="badge">
-                    <div class="badge-icon">🛡️</div>
-                    <div class="badge-text">Zero Surprises</div>
-                </div>
-                <div class="badge">
-                    <div class="badge-icon">📊</div>
-                    <div class="badge-text">Full Visibility</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- PROBLEMS -->
-    <section class="light">
+    <section class="section-light">
         <div class="container">
             <h2 class="section-title">The Cost Crisis is Real</h2>
-            <p class="section-subtitle">Every engineering team faces these nightmares</p>
+            <p class="section-subtitle">Every engineering team faces these exact nightmares</p>
 
             <div class="problem-grid">
                 <div class="problem-card">
                     <h3>🌀 Retry Storms</h3>
-                    <p>One bug causes exponential API calls. By morning: $15K gone. By next week: your job is in question.</p>
+                    <p>One bug causes exponential API calls. By morning: $15K gone. No way to stop it mid-execution.</p>
                 </div>
                 <div class="problem-card">
                     <h3>🤖 Agent Recursion</h3>
-                    <p>Agents loop infinitely on token consumption. Costs spike 10–100x in hours. No way to stop it mid-execution.</p>
+                    <p>Agents loop infinitely. Costs spike 10–100x in hours. Dashboard notification comes 24 hours late.</p>
                 </div>
                 <div class="problem-card">
                     <h3>📈 Silent Scaling</h3>
-                    <p>Traffic spikes and autoscaled jobs multiply API calls. Billing dashboard shows damage 24 hours later. Too late.</p>
+                    <p>Traffic spikes trigger autoscaling. API calls multiply invisibly. Bill is the first warning.</p>
                 </div>
                 <div class="problem-card">
-                    <h3>❌ Billing Only Reporting</h3>
-                    <p>Dashboards tell you AFTER money is gone. By then, CFO's email is in your inbox. Prevention wasn't possible.</p>
+                    <h3>❌ Billing Only Tells You</h3>
+                    <p>Dashboard shows damage after money spent. By then, CFO's calling. Prevention wasn't possible.</p>
                 </div>
                 <div class="problem-card">
                     <h3>😰 Sleep Anxiety</h3>
-                    <p>You can't leave code in production without fear. One bug = personal financial liability. No protection.</p>
+                    <p>You can't leave code in production without fear. One bug = personal financial liability.</p>
                 </div>
                 <div class="problem-card">
-                    <h3>💸 Vendor Lock-In</h3>
-                    <p>No per-app, per-user, per-agent budgets. You're hostage to a single vendor's rate limits. Helpless.</p>
+                    <h3>💸 No Granular Control</h3>
+                    <p>No per-app, per-user, per-agent budgets. You're hostage to vendor rate limits. Helpless.</p>
                 </div>
             </div>
         </div>
@@ -1062,23 +734,23 @@
     <section class="solution-section">
         <div class="container">
             <h2 class="section-title">How ASKS Stops It</h2>
-            <p class="section-subtitle">Runtime budget enforcement that actually prevents catastrophe</p>
+            <p class="section-subtitle">Runtime budget enforcement that prevents catastrophe before it costs you</p>
 
-            <div class="how-it-works">
+            <div class="steps-grid">
                 <div class="step">
                     <div class="step-number">1</div>
                     <h3>You Set Budgets</h3>
-                    <p>Define hard limits: per-execution, per-user, per-agent, per-service. Not suggestions. Hard stops.</p>
+                    <p>Define hard limits: per-execution, per-user, per-agent. Not suggestions. Hard stops.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
                     <h3>ASKS Watches</h3>
-                    <p>Before every API call, ASKS checks: "Is this within budget?" Real-time, deterministic enforcement.</p>
+                    <p>Before every API call, ASKS checks: "Is this within budget?" Real-time enforcement.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
                     <h3>Action Triggered</h3>
-                    <p>Budget exceeded? ASKS acts: fail-soft (degrade gracefully), or hard-stop (prevent call). Your choice.</p>
+                    <p>Budget exceeded? Fail-soft (degrade gracefully) or hard-stop (prevent call). Your choice.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">4</div>
@@ -1090,10 +762,10 @@
     </section>
 
     <!-- FEATURES -->
-    <section class="light">
+    <section class="section-light">
         <div class="container">
-            <h2 class="section-title">ASKS Features</h2>
-            <p class="section-subtitle">Everything you need for complete cost control</p>
+            <h2 class="section-title">ASKS Capabilities</h2>
+            <p class="section-subtitle">Everything you need for complete cost protection</p>
 
             <div class="features-grid">
                 <div class="feature-card">
@@ -1109,7 +781,7 @@
                 <div class="feature-card">
                     <div class="feature-icon">📊</div>
                     <h3>Spend Autopsy</h3>
-                    <p>Every trigger generates: "This action would have cost $X. Here's why. Here's when it would have hit."</p>
+                    <p>Every trigger: "This would have cost $X. Here's why. Here's when it hit the limit."</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🤖</div>
@@ -1119,112 +791,84 @@
                 <div class="feature-card">
                     <div class="feature-icon">🔧</div>
                     <h3>Easy Integration</h3>
-                    <p>SDK drops in minutes. Works with LLMs, APIs, jobs, agents, background workers. Inline enforcement.</p>
+                    <p>SDK drops in minutes. Works with LLMs, APIs, jobs, agents. Inline enforcement.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🎯</div>
-                    <h3>Fail-Soft Options</h3>
-                    <p>Don't force failure. Gracefully degrade: switch models, reduce concurrency, skip non-critical steps.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PROOF -->
-    <section class="light">
-        <div class="container">
-            <h2 class="section-title">Why ASKS Wins</h2>
-            <p class="section-subtitle">The only runtime budget enforcement that actually works</p>
-
-            <div class="proof-grid">
-                <div class="proof-card">
-                    <div class="proof-number">500+</div>
-                    <div class="proof-label">Engineers Protected</div>
-                </div>
-                <div class="proof-card">
-                    <div class="proof-number">$5B+</div>
-                    <div class="proof-label">Costs Monitored</div>
-                </div>
-                <div class="proof-card">
-                    <div class="proof-number">$50M+</div>
-                    <div class="proof-label">Surprises Prevented</div>
-                </div>
-                <div class="proof-card">
-                    <div class="proof-number">99.99%</div>
-                    <div class="proof-label">Uptime Guarantee</div>
+                    <h3>Graceful Degradation</h3>
+                    <p>Don't force failure. Switch models, reduce concurrency, skip non-critical steps.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- TESTIMONIALS -->
-    <section class="light">
+    <section class="section-light">
         <div class="container">
-            <h2 class="section-title">What Engineers Say</h2>
-            <p class="section-subtitle">Real feedback from teams using ASKS</p>
+            <h2 class="section-title">What Engineering Teams Say</h2>
+            <p class="section-subtitle">Real feedback from teams protecting production</p>
 
             <div class="testimonials-grid">
                 <div class="testimonial">
                     <div class="stars">★★★★★</div>
-                    <p class="testimonial-text">"ASKS saved us $47K in one week. A retry bug hit, and our costs spiked. ASKS caught it in minute 3. Can't imagine running production without it now."</p>
+                    <p class="testimonial-text">"ASKS saved us $47K in one week. One retry bug, costs spiked, ASKS caught it in minute 3. Can't run production without it now."</p>
                     <div class="testimonial-author">Sarah Chen</div>
-                    <div class="testimonial-role">VP Engineering, AI Startup</div>
+                    <div class="testimonial-role">VP Engineering, Scale-up</div>
                 </div>
                 <div class="testimonial">
                     <div class="stars">★★★★★</div>
-                    <p class="testimonial-text">"Budget enforcement at runtime. That's the insight we needed. No more 2 AM panic calls about LLM bills. ASKS gave us peace of mind."</p>
+                    <p class="testimonial-text">"Budget enforcement at runtime. That insight changed everything. No more 2 AM panic calls about LLM bills. Peace of mind."</p>
                     <div class="testimonial-author">Marcus Rodriguez</div>
                     <div class="testimonial-role">CTO, Fortune 500 Tech</div>
                 </div>
                 <div class="testimonial">
                     <div class="stars">★★★★★</div>
-                    <p class="testimonial-text">"We deploy 10x faster now. Engineers know their agents can't exceed budgets. Confidence in production increased dramatically."</p>
+                    <p class="testimonial-text">"Deploy 10x faster now. Engineers know agents can't exceed budgets. Production confidence increased dramatically."</p>
                     <div class="testimonial-author">Emma Thompson</div>
-                    <div class="testimonial-role">Engineering Lead, Scale-up</div>
+                    <div class="testimonial-role">Engineering Lead, AI Company</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- PRICING -->
-    <section class="light" id="pricing">
+    <section class="section-light" id="pricing">
         <div class="container">
             <h2 class="section-title">Transparent Pricing</h2>
-            <p class="section-subtitle">Pay for protection, not usage. No surprise bills.</p>
+            <p class="section-subtitle">Pay for protection, not usage</p>
 
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <h3 class="pricing-name">🚨 Emergency</h3>
                     <div class="pricing-price">$5k</div>
-                    <p class="pricing-period">One-time setup</p>
+                    <p style="color: var(--neutral-4);">One-time setup</p>
                     <div class="pricing-features">
                         <div class="pricing-feature">48-hour async setup</div>
                         <div class="pricing-feature">Hard caps + kill rules</div>
                         <div class="pricing-feature">Email support</div>
-                        <div class="pricing-feature">No meetings required</div>
                     </div>
-                    <button class="btn btn-primary" style="width: 100%;">Contact Sales</button>
+                    <button class="btn btn-primary" style="width: 100%; margin-top: var(--space-lg);">Contact Sales</button>
                 </div>
 
                 <div class="pricing-card featured">
                     <div class="pricing-badge">Most Popular</div>
                     <h3 class="pricing-name">🚀 Startup</h3>
                     <div class="pricing-price">$249</div>
-                    <p class="pricing-period">/month</p>
+                    <p style="color: var(--neutral-4);">/month</p>
                     <div class="pricing-features">
-                        <div class="pricing-feature">Runtime budget enforcement</div>
+                        <div class="pricing-feature">Runtime enforcement</div>
                         <div class="pricing-feature">Up to 5 services</div>
                         <div class="pricing-feature">Email + Slack support</div>
                         <div class="pricing-feature">30-day free trial</div>
-                        <div class="pricing-feature">Spend autopsy reports</div>
+                        <div class="pricing-feature">Spend autopsy</div>
                     </div>
-                    <button class="btn btn-primary" style="width: 100%; background: linear-gradient(135deg, var(--color-action-urgent), var(--color-action-dark));">Start Free Trial</button>
+                    <button class="btn btn-primary" style="width: 100%; margin-top: var(--space-lg);">Start Free Trial</button>
                 </div>
 
                 <div class="pricing-card">
                     <h3 class="pricing-name">💎 Pro</h3>
                     <div class="pricing-price">$749</div>
-                    <p class="pricing-period">/month</p>
+                    <p style="color: var(--neutral-4);">/month</p>
                     <div class="pricing-features">
                         <div class="pricing-feature">Unlimited services</div>
                         <div class="pricing-feature">Advanced agent budgets</div>
@@ -1232,25 +876,25 @@
                         <div class="pricing-feature">Custom integrations</div>
                         <div class="pricing-feature">SLA guarantees</div>
                     </div>
-                    <button class="btn btn-primary" style="width: 100%;">Get Custom Quote</button>
+                    <button class="btn btn-primary" style="width: 100%; margin-top: var(--space-lg);">Get Quote</button>
                 </div>
             </div>
 
-            <p style="text-align: center; margin-top: var(--space-6); color: var(--color-text-secondary);">
-                💳 <strong>No credit card required for trial</strong> • 30-day money-back guarantee
+            <p style="text-align: center; margin-top: var(--space-2xl); color: var(--neutral-4);">
+                💳 No credit card required • 30-day money-back guarantee
             </p>
         </div>
     </section>
 
     <!-- FAQ -->
-    <section class="light">
+    <section class="section-light">
         <div class="container">
-            <h2 class="section-title">Frequently Asked Questions</h2>
+            <h2 class="section-title">Questions Answered</h2>
 
             <div class="faq-container">
                 <div class="faq-item">
                     <div class="faq-question">
-                        How is ASKS different from monitoring or observability tools?
+                        How is ASKS different from monitoring?
                         <span class="faq-toggle">▼</span>
                     </div>
                     <div class="faq-answer">
@@ -1260,31 +904,31 @@
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        Does ASKS work with agents and LLMs?
+                        Does it work with agents and LLMs?
                         <span class="faq-toggle">▼</span>
                     </div>
                     <div class="faq-answer">
-                        Yes. ASKS enforces budgets across LLMs, APIs, agents, background jobs, and third-party services. Per-agent budgets prevent orchestration runaway. Perfect for autonomous systems.
+                        Yes. ASKS enforces budgets across LLMs, APIs, agents, background jobs. Per-agent budgets prevent orchestration runaway. Perfect for autonomous systems.
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        What if I have a legitimate business reason to exceed the budget?
+                        What if I need to exceed the budget?
                         <span class="faq-toggle">▼</span>
                     </div>
                     <div class="faq-answer">
-                        You control the rules. Set budgets, define exceptions, whitelist specific calls. ASKS enforces YOUR policies, not ours. Full control stays with you.
+                        You control the rules. Set budgets, define exceptions, whitelist calls. ASKS enforces YOUR policies. Full control stays with you.
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        Is ASKS expensive if I have high API costs?
+                        Is this expensive if I have high API costs?
                         <span class="faq-toggle">▼</span>
                     </div>
                     <div class="faq-answer">
-                        Pricing is fixed (not usage-based). One prevented $50K incident pays for ASKS for years. The ROI is undeniable: one prevented disaster justifies the entire investment.
+                        Pricing is fixed (not usage-based). One prevented $50K incident pays for ASKS for years. ROI is undeniable.
                     </div>
                 </div>
 
@@ -1294,17 +938,7 @@
                         <span class="faq-toggle">▼</span>
                     </div>
                     <div class="faq-answer">
-                        SDK integration takes minutes. Configuration is simple. Most teams are live within hours, not weeks. For Emergency tier, we handle setup in 48 hours async.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        What happens when ASKS stops a call?
-                        <span class="faq-toggle">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        You choose: Fail-soft (degrade gracefully, switch models, reduce concurrency) or hard-stop (prevent call, log event). Full control over response mode per budget level.
+                        SDK integration takes minutes. Most teams are live within hours. For Emergency tier, we handle setup in 48 hours async.
                     </div>
                 </div>
             </div>
@@ -1312,39 +946,30 @@
     </section>
 
     <!-- FINAL CTA -->
-    <section class="final-cta-section">
+    <section class="final-cta">
         <div class="container">
             <h2>Ready to Stop the Surprises?</h2>
             <p>Get protected in minutes. No credit card required.</p>
-            <button class="btn btn-secondary" style="color: var(--color-primary-trust); background: white;">Start Your Free Trial</button>
+            <button class="btn btn-secondary" style="color: var(--primary-trust); background: white; font-weight: 700;">Start Your Free Trial</button>
         </div>
     </section>
 
     <!-- FOOTER -->
     <footer>
-        <div class="container-sm">
-            <p>&copy; 2024 ASKS Platform. Built by founders, for founders.</p>
-            <p style="margin-top: var(--space-2); font-size: 0.85rem;">
-                <a href="#">Privacy</a> • <a href="#">Terms</a> • <a href="#">Security</a>
+        <div class="container">
+            <p>&copy; 2024 ASKS Platform. Built by experts, for experts.</p>
+            <p style="margin-top: var(--space-md); font-size: 0.9rem;">
+                <a href="#">Privacy</a> • <a href="#">Terms</a> • <a href="#">Security</a> • <a href="#">Accessibility</a>
             </p>
         </div>
     </footer>
 
     <script>
-        // FAQ TOGGLE
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', function() {
+        // FAQ toggle
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', function() {
                 this.parentElement.classList.toggle('active');
             });
-        });
-
-        // Smooth scroll fix
-        document.querySelectorAll('button').forEach(btn => {
-            if (btn.onclick && btn.onclick.toString().includes('scrollIntoView')) {
-                btn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                });
-            }
         });
     </script>
 </body>
