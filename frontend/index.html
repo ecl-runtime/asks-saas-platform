@@ -7,10 +7,9 @@
     <title>ASKS - Enterprise AI Cost Control</title>
     <style>
         /* ═══════════════════════════════════════════════════════════════
-           ULTRA-ADVANCED V3 DESIGN SYSTEM
-           Ultra-Deep Navy + Strategic Teal + 24K Gold
-           5.8rem / Weight 900 / -2.5px Typography
-           Advanced Neuroscience Psychology Integration
+           ULTIMATE V5 EXPERT DESIGN SYSTEM
+           Premium Light + Deep Charcoal + Elite Psychology Colors
+           Perfect Typography + Micro-Interactions + World-Class Spacing
            ═══════════════════════════════════════════════════════════════ */
 
         * {
@@ -20,190 +19,216 @@
         }
 
         :root {
-            /* V3 COLORS - ULTRA-PROFESSIONAL */
-            --primary-navy: #0d1b3d;
-            --secondary-teal: #2d5f8d;
+            /* PREMIUM COLOR PALETTE V5 */
+            --bg-pure: #ffffff;
+            --bg-soft: #fafbfc;
+            --bg-subtle: #f5f7fa;
+            --text-hero: #0f172a;
+            --text-primary: #1e293b;
+            --text-secondary: #475569;
+            --text-tertiary: #64748b;
+            --accent-primary: #0ea5e9;
+            --accent-darker: #0284c7;
+            --accent-darkest: #0369a1;
             --accent-red: #ef4444;
-            --success-gold: #d4af37;
-            --neutral-white: #f8fafc;
-            --neutral-light: #f8fafc;
-            --text-primary: #0d1b3d;
-            --text-secondary: #8a92a6;
-            --border-color: #e0e6f2;
-
-            /* TYPOGRAPHY */
-            --font-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-
-            /* V3 SPACING - FIBONACCI SEQUENCE */
-            --sp-xs: 4px;
-            --sp-sm: 8px;
-            --sp-md: 12px;
-            --sp-lg: 16px;
-            --sp-xl: 40px;
-            --sp-2xl: 64px;
-            --sp-3xl: 104px;
-
-            /* SHADOWS */
-            --shadow-sm: 0 2px 12px rgba(13, 27, 61, 0.06);
-            --shadow-md: 0 4px 16px rgba(13, 27, 61, 0.12);
-            --shadow-lg: 0 24px 48px rgba(13, 27, 61, 0.12);
-        }
-
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --neutral-light: #0f1419;
-                --neutral-white: #1a1f2e;
-                --text-primary: #f0f4f8;
-                --border-color: #2a3142;
-            }
+            --accent-green: #10b981;
+            --accent-amber: #f59e0b;
+            --border-soft: #e2e8f0;
+            --border-medium: #cbd5e0;
+            --shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.05);
+            --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.08), 0 1px 2px rgba(15, 23, 42, 0.04);
+            --shadow-md: 0 4px 6px rgba(15, 23, 42, 0.1), 0 2px 4px rgba(15, 23, 42, 0.06);
+            --shadow-lg: 0 10px 15px rgba(15, 23, 42, 0.1), 0 4px 6px rgba(15, 23, 42, 0.05);
+            --shadow-xl: 0 20px 25px rgba(15, 23, 42, 0.1), 0 10px 10px rgba(15, 23, 42, 0.04);
         }
 
         html {
             font-size: 16px;
             scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         body {
-            font-family: var(--font-base);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
             color: var(--text-primary);
-            background-color: var(--neutral-light);
-            line-height: 1.85;
+            background: var(--bg-pure);
+            line-height: 1.6;
         }
 
         /* ═══════════════════════════════════════════════════════════════
-           TYPOGRAPHY V3 - OPTICAL EXCELLENCE
+           WORLD-CLASS TYPOGRAPHY
            ═══════════════════════════════════════════════════════════════ */
 
         h1 {
-            font-size: clamp(2.5rem, 6vw, 5.8rem);
-            font-weight: 900;
-            letter-spacing: -2.5px;
-            line-height: 1.15;
-            color: var(--primary-navy);
-            margin-bottom: var(--sp-lg);
+            font-size: clamp(2.5rem, 7vw, 4.5rem);
+            font-weight: 800;
+            letter-spacing: -1.2px;
+            line-height: 1.2;
+            color: var(--text-hero);
+            margin-bottom: 1.25rem;
         }
 
         h2 {
-            font-size: clamp(2rem, 4vw, 3.8rem);
+            font-size: clamp(1.875rem, 5vw, 3rem);
             font-weight: 700;
-            letter-spacing: -1.8px;
-            line-height: 1.3;
-            color: var(--primary-navy);
-            margin-bottom: var(--sp-xl);
+            letter-spacing: -0.8px;
+            line-height: 1.25;
+            color: var(--text-hero);
+            margin-bottom: 2rem;
         }
 
         h3 {
-            font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+            font-size: clamp(1.25rem, 2.5vw, 1.875rem);
             font-weight: 700;
-            letter-spacing: -1.2px;
-            color: var(--primary-navy);
-            margin-bottom: var(--sp-lg);
+            letter-spacing: -0.4px;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
         }
 
         p {
-            font-size: clamp(1rem, 1.125vw, 1.1875rem);
-            line-height: 1.85;
-            color: var(--text-primary);
-            margin-bottom: var(--sp-lg);
+            font-size: clamp(0.95rem, 1.1vw, 1.0625rem);
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
         }
 
-        .text-muted {
+        .text-xl {
+            font-size: 1.125rem;
             color: var(--text-secondary);
         }
 
+        .text-muted {
+            color: var(--text-tertiary);
+            font-size: 0.95rem;
+        }
+
         /* ═══════════════════════════════════════════════════════════════
-           COMPONENTS
+           PREMIUM COMPONENTS
            ═══════════════════════════════════════════════════════════════ */
 
         .container {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 0 var(--sp-lg);
+            padding: 0 2rem;
         }
 
         .button {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 14px 28px;
-            border-radius: 10px;
-            font-weight: 700;
-            font-size: 1.0625rem;
-            letter-spacing: 0.5px;
+            gap: 0.5rem;
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
             text-decoration: none;
             border: none;
             cursor: pointer;
-            transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
             white-space: nowrap;
+            box-shadow: var(--shadow-sm);
         }
 
         .button:hover {
-            transform: scale(1.02) translateY(-4px);
-            box-shadow: 0 12px 32px rgba(239, 68, 68, 0.25);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .button:active {
+            transform: translateY(0);
         }
 
         .button-primary {
-            background: var(--accent-red);
+            background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-darker) 100%);
             color: white;
-            box-shadow: 0 4px 16px rgba(239, 68, 68, 0.15);
+            font-weight: 600;
+        }
+
+        .button-primary:hover {
+            box-shadow: 0 12px 24px rgba(14, 165, 233, 0.3);
         }
 
         .button-secondary {
-            background: white;
-            color: var(--primary-navy);
-            border: 2px solid var(--primary-navy);
+            background: var(--bg-pure);
+            color: var(--accent-primary);
+            border: 1.5px solid var(--accent-primary);
+            box-shadow: var(--shadow-xs);
         }
 
         .button-secondary:hover {
-            background: var(--primary-navy);
-            color: white;
+            background: rgba(14, 165, 233, 0.05);
         }
 
         /* ═══════════════════════════════════════════════════════════════
-           LAYOUT SECTIONS
+           HERO SECTION - PREMIUM EXCELLENCE
            ═══════════════════════════════════════════════════════════════ */
 
         .hero {
-            background: var(--neutral-light);
-            padding: var(--sp-3xl) var(--sp-lg);
+            background: linear-gradient(135deg, var(--bg-soft) 0%, var(--bg-subtle) 100%);
+            padding: 6rem 2rem;
             text-align: center;
+            min-height: 680px;
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 650px;
         }
 
         .hero-content {
-            max-width: 850px;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            background: linear-gradient(135deg, var(--text-hero) 0%, var(--accent-primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
         }
 
         .alert-box {
-            background: linear-gradient(135deg, rgba(239, 68, 68, 0.08), rgba(239, 68, 68, 0.04));
-            border-left: 4px solid var(--accent-red);
-            padding: var(--sp-xl);
-            border-radius: 10px;
-            margin: var(--sp-2xl) 0;
+            background: linear-gradient(135deg, #fef08a 0%, #fde047 100%);
+            border-left: 5px solid var(--accent-amber);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
             text-align: left;
+            box-shadow: var(--shadow-md);
+        }
+
+        .alert-box p {
+            margin-bottom: 0.5rem;
+            color: #7c2d12;
+            font-weight: 600;
         }
 
         .button-group {
             display: flex;
-            gap: var(--sp-lg);
+            gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
-            margin-top: var(--sp-2xl);
+            margin-top: 2.5rem;
         }
+
+        /* ═══════════════════════════════════════════════════════════════
+           SECTIONS
+           ═══════════════════════════════════════════════════════════════ */
 
         section {
-            padding: var(--sp-3xl) var(--sp-lg);
+            padding: 5rem 2rem;
         }
 
-        .section-light {
-            background: var(--neutral-light);
+        .section-white {
+            background: var(--bg-pure);
+        }
+
+        .section-soft {
+            background: var(--bg-soft);
         }
 
         .section-dark {
-            background: var(--primary-navy);
+            background: linear-gradient(135deg, #0f172a 0%, #1a1f36 100%);
             color: white;
         }
 
@@ -214,41 +239,47 @@
 
         .section-title {
             text-align: center;
-            margin-bottom: var(--sp-2xl);
+            margin-bottom: 3.5rem;
         }
 
         /* ═══════════════════════════════════════════════════════════════
-           GRID & CARDS
+           GRID SYSTEM
            ═══════════════════════════════════════════════════════════════ */
 
         .grid {
             display: grid;
-            gap: var(--sp-2xl);
-            margin-top: var(--sp-2xl);
+            gap: 2rem;
+            margin-top: 1.5rem;
         }
 
         .grid-2 {
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
         }
 
         .grid-3 {
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         }
 
         .grid-4 {
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
         }
 
+        /* ═══════════════════════════════════════════════════════════════
+           PREMIUM CARDS
+           ═══════════════════════════════════════════════════════════════ */
+
         .card {
-            background: white;
-            border-radius: 14px;
-            padding: 20px;
-            border: 2px solid var(--border-color);
-            transition: all 300ms cubic-bezier(0.16, 1, 0.3, 1);
+            background: var(--bg-pure);
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid var(--border-soft);
+            transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: var(--shadow-xs);
         }
 
         .card:hover {
-            transform: translateY(-16px);
+            border-color: var(--accent-primary);
+            transform: translateY(-8px);
             box-shadow: var(--shadow-lg);
         }
 
@@ -256,47 +287,55 @@
             border-left: 4px solid var(--accent-red);
         }
 
+        .card-problem:hover {
+            border-left-color: var(--accent-darkest);
+        }
+
         .card-feature {
-            border-top: 4px solid var(--primary-navy);
-            transition: border-color 300ms ease;
+            border-top: 3px solid var(--border-soft);
         }
 
         .card-feature:hover {
-            border-top-color: var(--success-gold);
+            border-top-color: var(--accent-primary);
         }
 
         .card h3 {
-            margin-bottom: var(--sp-md);
+            margin-bottom: 0.5rem;
         }
 
         /* ═══════════════════════════════════════════════════════════════
-           TRUST BADGES
+           BADGES
            ═══════════════════════════════════════════════════════════════ */
 
         .badge-item {
             text-align: center;
-            padding: var(--sp-xl);
+            padding: 1.75rem;
+            background: var(--bg-pure);
+            border-radius: 12px;
+            border: 1px solid var(--border-soft);
+            transition: all 250ms ease;
+        }
+
+        .badge-item:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
         }
 
         .badge-icon {
-            font-size: 3rem;
-            margin-bottom: var(--sp-md);
-        }
-
-        .badge-item h3 {
-            font-size: clamp(1rem, 1.125vw, 1.25rem);
-            margin-bottom: var(--sp-sm);
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
         }
 
         /* ═══════════════════════════════════════════════════════════════
-           SOLUTION SECTION
+           SOLUTION STEPS
            ═══════════════════════════════════════════════════════════════ */
 
         .solution-steps {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: var(--sp-2xl);
-            margin-top: var(--sp-2xl);
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
         }
 
         .step {
@@ -310,14 +349,19 @@
             top: 0;
             width: 48px;
             height: 48px;
-            background: var(--success-gold);
-            color: var(--primary-navy);
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-darker));
+            color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 900;
+            font-weight: 700;
             font-size: 1.5rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .section-dark .step-number {
+            background: linear-gradient(135deg, #0ea5e9, #06b6d4);
         }
 
         /* ═══════════════════════════════════════════════════════════════
@@ -326,18 +370,18 @@
 
         .stat {
             text-align: center;
-            padding: var(--sp-xl);
+            padding: 1.5rem;
         }
 
         .stat-number {
-            font-size: clamp(2rem, 4vw, 3.5rem);
-            font-weight: 900;
-            color: var(--primary-navy);
+            font-size: clamp(1.75rem, 3vw, 3rem);
+            font-weight: 800;
+            color: var(--accent-primary);
             letter-spacing: -1px;
         }
 
         .section-dark .stat-number {
-            color: var(--success-gold);
+            color: #22d3ee;
         }
 
         /* ═══════════════════════════════════════════════════════════════
@@ -345,31 +389,44 @@
            ═══════════════════════════════════════════════════════════════ */
 
         .card-testimonial {
-            background: white;
+            background: var(--bg-pure);
             border-radius: 12px;
-            padding: var(--sp-xl);
-            border: 2px solid var(--border-color);
+            padding: 2rem;
+            border: 1px solid var(--border-soft);
+            box-shadow: var(--shadow-xs);
+            transition: all 300ms ease;
         }
 
-        .card-testimonial .stars {
-            color: var(--success-gold);
-            font-size: 1.25rem;
-            margin-bottom: var(--sp-md);
+        .card-testimonial:hover {
+            border-color: var(--accent-primary);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+
+        .stars {
+            color: var(--accent-amber);
+            font-size: 1rem;
+            margin-bottom: 1rem;
             letter-spacing: 2px;
         }
 
-        .card-testimonial .quote {
-            font-size: clamp(0.95rem, 1vw, 1.125rem);
+        .quote {
+            font-size: 0.95rem;
             color: var(--text-secondary);
-            margin-bottom: var(--sp-lg);
+            margin-bottom: 1rem;
             font-style: italic;
-            line-height: 1.85;
+            line-height: 1.7;
         }
 
-        .card-testimonial .author {
-            font-weight: 900;
-            color: var(--primary-navy);
-            margin-bottom: 4px;
+        .author {
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .author-title {
+            font-size: 0.8rem;
+            color: var(--text-tertiary);
         }
 
         /* ═══════════════════════════════════════════════════════════════
@@ -378,75 +435,77 @@
 
         .pricing-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: var(--sp-2xl);
-            margin-top: var(--sp-2xl);
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
             max-width: 1100px;
             margin-left: auto;
             margin-right: auto;
         }
 
         .pricing-card {
-            background: white;
-            border: 2px solid var(--border-color);
-            border-radius: 14px;
-            padding: var(--sp-2xl);
+            background: var(--bg-pure);
+            border: 1.5px solid var(--border-soft);
+            border-radius: 12px;
+            padding: 2.5rem;
             text-align: center;
             position: relative;
             transition: all 300ms ease;
+            box-shadow: var(--shadow-sm);
         }
 
         .pricing-card.featured {
-            border-color: var(--primary-navy);
+            border-color: var(--accent-primary);
             transform: scale(1.05);
-            box-shadow: var(--shadow-lg);
+            box-shadow: var(--shadow-xl);
         }
 
         .pricing-card.featured::before {
-            content: 'Most Popular';
+            content: '⭐ Most Popular';
             position: absolute;
             top: -12px;
             left: 50%;
             transform: translateX(-50%);
-            background: var(--success-gold);
-            color: var(--primary-navy);
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-darker));
+            color: white;
             padding: 6px 16px;
             border-radius: 20px;
             font-size: 0.75rem;
-            font-weight: 900;
+            font-weight: 700;
             letter-spacing: 0.5px;
+            box-shadow: var(--shadow-md);
         }
 
         .pricing-amount {
-            font-size: clamp(2rem, 3vw, 3rem);
-            font-weight: 900;
-            color: var(--primary-navy);
-            letter-spacing: -1px;
-            margin: var(--sp-xl) 0;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent-primary);
+            margin: 1rem 0;
         }
 
         .pricing-features {
             list-style: none;
-            margin: var(--sp-xl) 0;
+            margin: 1.5rem 0;
             text-align: left;
         }
 
         .pricing-features li {
-            padding: var(--sp-md) 0;
-            color: var(--text-primary);
-            border-bottom: 1px solid var(--border-color);
+            padding: 0.65rem 0;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border-soft);
+            font-size: 0.95rem;
         }
 
         .pricing-features li:before {
             content: '✓ ';
-            color: var(--success-gold);
-            font-weight: 900;
-            margin-right: var(--sp-sm);
+            color: var(--accent-green);
+            font-weight: 700;
+            margin-right: 0.5rem;
         }
 
         .pricing-card .button {
             width: 100%;
-            margin-top: var(--sp-xl);
+            margin-top: 1.5rem;
         }
 
         /* ═══════════════════════════════════════════════════════════════
@@ -454,31 +513,34 @@
            ═══════════════════════════════════════════════════════════════ */
 
         .faq-item {
-            background: white;
-            border: 2px solid var(--border-color);
+            background: var(--bg-pure);
+            border: 1px solid var(--border-soft);
             border-radius: 10px;
-            margin-bottom: var(--sp-lg);
+            margin-bottom: 1rem;
             overflow: hidden;
+            box-shadow: var(--shadow-xs);
         }
 
         .faq-question {
-            padding: var(--sp-xl);
+            padding: 1.5rem;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: var(--neutral-light);
-            transition: all 300ms ease;
+            background: var(--bg-soft);
+            transition: all 250ms ease;
+            user-select: none;
         }
 
         .faq-question:hover {
-            background: #eef0f5;
+            background: var(--bg-subtle);
         }
 
         .faq-toggle {
-            font-size: 1.5rem;
-            color: var(--primary-navy);
+            font-size: 1.25rem;
+            color: var(--accent-primary);
             transition: transform 200ms ease;
+            font-weight: 600;
         }
 
         .faq-item.active .faq-toggle {
@@ -486,26 +548,34 @@
         }
 
         .faq-answer {
-            padding: var(--sp-xl);
+            padding: 0 1.5rem;
             color: var(--text-secondary);
             display: none;
-            border-top: 2px solid var(--border-color);
+            max-height: 0;
+            overflow: hidden;
+            background: var(--bg-pure);
+            transition: all 300ms ease;
         }
 
         .faq-item.active .faq-answer {
             display: block;
-            animation: slideDown 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            padding: 1.5rem;
+            max-height: 500px;
         }
 
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* ═══════════════════════════════════════════════════════════════
+           CTA SECTION
+           ═══════════════════════════════════════════════════════════════ */
+
+        .cta-section {
+            text-align: center;
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--bg-subtle) 0%, var(--bg-soft) 100%);
+        }
+
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
         }
 
         /* ═══════════════════════════════════════════════════════════════
@@ -513,50 +583,74 @@
            ═══════════════════════════════════════════════════════════════ */
 
         footer {
-            background: var(--primary-navy);
+            background: linear-gradient(135deg, #0f172a 0%, #1a1f36 100%);
             color: white;
-            padding: var(--sp-2xl) var(--sp-lg);
+            padding: 3rem 2rem;
             text-align: center;
         }
 
+        footer h3 {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        footer p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
         /* ═══════════════════════════════════════════════════════════════
-           RESPONSIVE
+           RESPONSIVE DESIGN
            ═══════════════════════════════════════════════════════════════ */
 
         @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            section {
+                padding: 3rem 1.5rem;
+            }
+
+            .hero {
+                padding: 3rem 1.5rem;
+                min-height: 500px;
+            }
+
             .button-group {
                 flex-direction: column;
+                gap: 0.75rem;
             }
 
             .button {
                 width: 100%;
+                padding: 14px 20px;
             }
 
             .pricing-card.featured {
                 transform: scale(1);
             }
 
-            .solution-steps {
-                grid-template-columns: 1fr;
+            h1 {
+                font-size: 2rem;
             }
 
-            .hero {
-                min-height: 500px;
+            h2 {
+                font-size: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- HERO SECTION -->
+    <!-- HERO -->
     <section class="hero">
         <div class="hero-content">
             <h1>Your $50K LLM Bill Just Hit</h1>
-            <p class="text-muted" style="font-size: 1.25rem; margin-bottom: var(--sp-lg);">In 47 minutes. You're explaining it to your CFO at 2 AM.</p>
+            <p class="text-xl">In 47 minutes. You're explaining it to your CFO at 2 AM.</p>
             
             <div class="alert-box">
-                <p style="margin-bottom: var(--sp-sm);"><strong>⚠️ One bad retry loop. One forgotten rate limit.</strong></p>
-                <p style="margin-bottom: var(--sp-sm);"><strong>Now you're explaining $50K to finance.</strong></p>
-                <p style="margin-bottom: 0;"><strong>ASKS would have stopped it in minute 3.</strong></p>
+                <p>⚠️ One bad retry loop. One forgotten rate limit.</p>
+                <p>Now you're explaining $50K to finance.</p>
+                <p><strong>ASKS would have stopped it in minute 3.</strong></p>
             </div>
 
             <div class="button-group">
@@ -567,13 +661,13 @@
     </section>
 
     <!-- TRUST BADGES -->
-    <section class="section-light">
+    <section class="section-soft">
         <div class="container">
             <div class="grid grid-4">
                 <div class="badge-item">
                     <div class="badge-icon">🔒</div>
                     <h3>Enterprise Grade</h3>
-                    <p class="text-muted">Security-first</p>
+                    <p class="text-muted">Security-first design</p>
                 </div>
                 <div class="badge-item">
                     <div class="badge-icon">⚡</div>
@@ -583,7 +677,7 @@
                 <div class="badge-item">
                     <div class="badge-icon">📊</div>
                     <h3>Complete Visibility</h3>
-                    <p class="text-muted">Track everything</p>
+                    <p class="text-muted">Track every dollar</p>
                 </div>
                 <div class="badge-item">
                     <div class="badge-icon">✅</div>
@@ -595,35 +689,36 @@
     </section>
 
     <!-- PROBLEMS -->
-    <section class="section-light">
+    <section class="section-white">
         <div class="container">
             <div class="section-title">
-                <h2>The Problems We Solve</h2>
+                <h2>The Real Problems</h2>
+                <p>Stop guessing. Stop losing control.</p>
             </div>
             <div class="grid grid-2">
                 <div class="card card-problem">
                     <h3>Runaway Costs</h3>
-                    <p class="text-muted">LLM costs spike overnight with no warning. By the time you notice, you're liable for $50K+.</p>
+                    <p>LLM costs spike overnight with no warning. By the time you notice, you're liable for $50K+.</p>
                 </div>
                 <div class="card card-problem">
                     <h3>Rate Limit Chaos</h3>
-                    <p class="text-muted">Forgotten rate limits cause retry storms. Exponential multipliers. Notification hell.</p>
+                    <p>Forgotten rate limits cause retry storms. Exponential multipliers. Notification hell.</p>
                 </div>
                 <div class="card card-problem">
                     <h3>No Insight</h3>
-                    <p class="text-muted">Black box spending. You don't know which model caused the spike.</p>
+                    <p>Black box spending. You don't know which model caused the spike.</p>
                 </div>
                 <div class="card card-problem">
                     <h3>Manual Enforcement</h3>
-                    <p class="text-muted">You can't pause keys fast enough. Costs continue climbing.</p>
+                    <p>You can't pause keys fast enough. Costs continue climbing.</p>
                 </div>
                 <div class="card card-problem">
                     <h3>Finance Surprises</h3>
-                    <p class="text-muted">Monthly overruns destroy projections. CFO loses trust in estimates.</p>
+                    <p>Monthly overruns destroy projections. CFO loses trust in estimates.</p>
                 </div>
                 <div class="card card-problem">
                     <h3>Scaling Fear</h3>
-                    <p class="text-muted">Every new feature feels like a cost bomb waiting to explode.</p>
+                    <p>Every new feature feels like a cost bomb waiting to explode.</p>
                 </div>
             </div>
         </div>
@@ -634,73 +729,75 @@
         <div class="container">
             <div class="section-title">
                 <h2>How ASKS Works</h2>
-                <p style="color: rgba(255,255,255,0.85);">Real-time budget enforcement that stops overspend before it starts</p>
+                <p>Real-time budget enforcement. Automatic control. Zero surprises.</p>
             </div>
             <div class="solution-steps">
                 <div class="step">
                     <div class="step-number">1</div>
                     <h3>You Set Budgets</h3>
-                    <p class="text-muted">Define cost limits by model, feature, or user.</p>
+                    <p>Define cost limits by model, feature, or user.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
                     <h3>ASKS Watches</h3>
-                    <p class="text-muted">Every token request flows through ASKS in real-time.</p>
+                    <p>Every token request flows through ASKS in real-time.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
                     <h3>Instant Enforcement</h3>
-                    <p class="text-muted">When budget hits: pause keys, block requests, trigger alerts.</p>
+                    <p>When budget hits: pause keys, block requests, alert you.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">4</div>
-                    <h3>Complete Visibility</h3>
-                    <p class="text-muted">Dashboard shows cost by model, feature, user.</p>
+                    <h3>Full Visibility</h3>
+                    <p>Dashboard shows cost by model, feature, user, team.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- FEATURES -->
-    <section class="section-light">
+    <section class="section-soft">
         <div class="container">
             <div class="section-title">
-                <h2>Enterprise Features</h2>
+                <h2>Powerful Features</h2>
+                <p>Everything you need to control costs.</p>
             </div>
             <div class="grid grid-3">
                 <div class="card card-feature">
                     <h3>Budget Guard</h3>
-                    <p class="text-muted">Set limits. ASKS auto-stops when exhausted. Zero overage.</p>
+                    <p>Set limits. ASKS auto-stops when exhausted. Zero overage.</p>
                 </div>
                 <div class="card card-feature">
                     <h3>Real-Time Analytics</h3>
-                    <p class="text-muted">Dashboard shows cost by model. See where every dollar goes.</p>
+                    <p>Dashboard shows cost by model. See where every dollar goes.</p>
                 </div>
                 <div class="card card-feature">
                     <h3>Alert System</h3>
-                    <p class="text-muted">Slack, email, webhooks. Get notified at 50%, 80%, 100%.</p>
+                    <p>Slack, email, webhooks. Get notified at 50%, 80%, 100%.</p>
                 </div>
                 <div class="card card-feature">
                     <h3>User-Level Control</h3>
-                    <p class="text-muted">Set budgets per user, team, feature. Prevent expensive usage.</p>
+                    <p>Set budgets per user, team, feature. Prevent expensive usage.</p>
                 </div>
                 <div class="card card-feature">
                     <h3>Model Optimization</h3>
-                    <p class="text-muted">Recommendations to optimize choices. Use cheaper models.</p>
+                    <p>Recommendations to use cheaper models. Save 40%+ instantly.</p>
                 </div>
                 <div class="card card-feature">
                     <h3>Compliance Reports</h3>
-                    <p class="text-muted">Export spending reports. Audit trail for every request.</p>
+                    <p>Export spending reports. Complete audit trail for everything.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- SOCIAL PROOF -->
-    <section class="section-light">
+    <section class="section-white">
         <div class="container">
             <div class="section-title">
-                <h2>Trusted by Enterprise Teams</h2>
+                <h2>Trusted by Top Teams</h2>
+                <p>500+ engineers protecting their LLM budgets</p>
             </div>
             <div class="grid grid-4">
                 <div class="stat">
@@ -724,7 +821,7 @@
     </section>
 
     <!-- TESTIMONIALS -->
-    <section class="section-light">
+    <section class="section-soft">
         <div class="container">
             <div class="section-title">
                 <h2>What Teams Say</h2>
@@ -734,42 +831,42 @@
                     <div class="stars">★★★★★</div>
                     <div class="quote">"ASKS saved us $47K in month one. Game changer for LLM budgeting."</div>
                     <div class="author">Sarah Chen</div>
-                    <div class="text-muted" style="font-size: 0.875rem;">Head of AI Engineering</div>
+                    <div class="author-title">Head of AI Engineering</div>
                 </div>
                 <div class="card-testimonial">
                     <div class="stars">★★★★★</div>
                     <div class="quote">"First time we have visibility into which features cost what."</div>
                     <div class="author">James Rodriguez</div>
-                    <div class="text-muted" style="font-size: 0.875rem;">Finance Lead</div>
+                    <div class="author-title">Finance Lead</div>
                 </div>
                 <div class="card-testimonial">
                     <div class="stars">★★★★★</div>
                     <div class="quote">"Real-time enforcement means we can be aggressive with AI features."</div>
                     <div class="author">Lisa Wang</div>
-                    <div class="text-muted" style="font-size: 0.875rem;">CTO</div>
+                    <div class="author-title">CTO</div>
                 </div>
                 <div class="card-testimonial">
                     <div class="stars">★★★★★</div>
                     <div class="quote">"Deployment was 15 minutes. Support is instant."</div>
                     <div class="author">Michael Park</div>
-                    <div class="text-muted" style="font-size: 0.875rem;">VP Engineering</div>
+                    <div class="author-title">VP Engineering</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- PRICING -->
-    <section class="section-light">
+    <section class="section-white">
         <div class="container">
             <div class="section-title">
                 <h2>Simple, Transparent Pricing</h2>
-                <p class="text-muted">No hidden fees. You know exactly what you pay.</p>
+                <p>No hidden fees. No surprises.</p>
             </div>
             <div class="pricing-cards">
                 <div class="pricing-card">
                     <h3>Starter</h3>
                     <div class="pricing-amount">$299</div>
-                    <p class="text-muted" style="margin-bottom: var(--sp-xl);">per month</p>
+                    <p class="text-muted">per month</p>
                     <ul class="pricing-features">
                         <li>Up to 10 API keys</li>
                         <li>Basic analytics</li>
@@ -782,7 +879,7 @@
                 <div class="pricing-card featured">
                     <h3>Pro</h3>
                     <div class="pricing-amount">$999</div>
-                    <p class="text-muted" style="margin-bottom: var(--sp-xl);">per month</p>
+                    <p class="text-muted">per month</p>
                     <ul class="pricing-features">
                         <li>Unlimited API keys</li>
                         <li>Advanced analytics</li>
@@ -797,7 +894,7 @@
                 <div class="pricing-card">
                     <h3>Enterprise</h3>
                     <div class="pricing-amount">Custom</div>
-                    <p class="text-muted" style="margin-bottom: var(--sp-xl);">contact for quote</p>
+                    <p class="text-muted">contact for quote</p>
                     <ul class="pricing-features">
                         <li>Everything in Pro</li>
                         <li>Dedicated account manager</li>
@@ -812,39 +909,39 @@
     </section>
 
     <!-- FAQ -->
-    <section class="section-light">
-        <div class="container" style="max-width: 850px;">
+    <section class="section-soft">
+        <div class="container" style="max-width: 800px;">
             <div class="section-title">
-                <h2>Frequently Asked Questions</h2>
+                <h2>Common Questions</h2>
             </div>
             
             <div class="faq-item">
                 <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
-                    <h3 style="margin: 0;">How does ASKS integrate?</h3>
+                    <h3 style="margin: 0;">How does ASKS integrate with my existing setup?</h3>
                     <span class="faq-toggle">▼</span>
                 </div>
                 <div class="faq-answer">
-                    <p style="margin: 0;">ASKS is a proxy between your app and LLM APIs. Change your API endpoint, that's it. Works with OpenAI, Anthropic, others. 15-minute setup.</p>
+                    <p>ASKS is a proxy between your app and LLM APIs. Just change your API endpoint. Works with OpenAI, Anthropic, and others. 15-minute setup.</p>
                 </div>
             </div>
 
             <div class="faq-item">
                 <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
-                    <h3 style="margin: 0;">Will it slow down API calls?</h3>
+                    <h3 style="margin: 0;">Will ASKS slow down my API calls?</h3>
                     <span class="faq-toggle">▼</span>
                 </div>
                 <div class="faq-answer">
-                    <p style="margin: 0;">No. ASKS adds 48ms average latency (typically unnoticed). Cost calculation is sub-millisecond.</p>
+                    <p>No. ASKS adds 48ms average latency (typically unnoticed). Cost calculation is sub-millisecond. Your app runs at full speed.</p>
                 </div>
             </div>
 
             <div class="faq-item">
                 <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
-                    <h3 style="margin: 0;">What if we go over budget?</h3>
+                    <h3 style="margin: 0;">What happens if we go over budget?</h3>
                     <span class="faq-toggle">▼</span>
                 </div>
                 <div class="faq-answer">
-                    <p style="margin: 0;">Requests are blocked at the limit. You get Slack alerts at 50%, 80%, 100%. You can increase budgets manually anytime.</p>
+                    <p>Requests are blocked at the limit. You get Slack alerts at 50%, 80%, and 100%. You can increase budgets anytime with one click.</p>
                 </div>
             </div>
 
@@ -854,17 +951,17 @@
                     <span class="faq-toggle">▼</span>
                 </div>
                 <div class="faq-answer">
-                    <p style="margin: 0;">Enterprise-grade security. Encrypted in transit and at rest. We don't store prompts or completions. SOC 2 compliant. On-premise available.</p>
+                    <p>Enterprise-grade security. Encrypted in transit and at rest. We don't store prompts or completions. SOC 2 compliant. On-premise option available.</p>
                 </div>
             </div>
 
             <div class="faq-item">
                 <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
-                    <h3 style="margin: 0;">Can we try it free?</h3>
+                    <h3 style="margin: 0;">Can we try ASKS for free?</h3>
                     <span class="faq-toggle">▼</span>
                 </div>
                 <div class="faq-answer">
-                    <p style="margin: 0;">Yes. 30-day free trial on all plans. No credit card required. Full feature access.</p>
+                    <p>Yes. 30-day free trial on all plans. No credit card required. Full feature access. Cancel anytime.</p>
                 </div>
             </div>
 
@@ -874,41 +971,44 @@
                     <span class="faq-toggle">▼</span>
                 </div>
                 <div class="faq-answer">
-                    <p style="margin: 0;">Starter: Community (24h). Pro: Priority email (4h). Enterprise: Dedicated manager + phone (1h).</p>
+                    <p>Starter: Community (24h response). Pro: Priority email (4h response). Enterprise: Dedicated manager + phone (1h response).</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- FINAL CTA -->
-    <section style="background: linear-gradient(135deg, var(--primary-navy), var(--secondary-teal)); color: white; text-align: center; padding: var(--sp-3xl) var(--sp-lg);">
-        <div class="container" style="max-width: 700px;">
-            <h2 style="color: white; margin-bottom: var(--sp-lg);">Ready to Stop the Surprises?</h2>
-            <p style="color: rgba(255,255,255,0.9); font-size: 1.125rem; margin-bottom: var(--sp-2xl);">Join 500+ engineers with complete LLM cost control.</p>
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Stop the Surprises?</h2>
+            <p class="text-xl">Join 500+ engineers with complete LLM cost control today.</p>
             
-            <div style="display: flex; gap: var(--sp-lg); justify-content: center; flex-wrap: wrap; margin-bottom: var(--sp-xl);">
+            <div class="button-group">
                 <button class="button button-primary">🚀 Start Free Trial</button>
-                <button class="button" style="background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.3); color: white;">→ Schedule Demo</button>
+                <button class="button button-secondary">→ Schedule Demo</button>
             </div>
             
-            <p style="color: rgba(255,255,255,0.8); font-size: 0.95rem;">No credit card required. 30-day full access. Cancel anytime.</p>
+            <p class="text-muted" style="margin-top: 1.5rem;">No credit card required. 30-day full access. Cancel anytime.</p>
         </div>
     </section>
 
     <!-- FOOTER -->
     <footer>
         <div class="container">
-            <h3 style="margin-bottom: var(--sp-lg);">ASKS</h3>
-            <p style="margin: 0;">Enterprise AI Cost Control Platform</p>
-            <p style="font-size: 0.875rem; color: rgba(255,255,255,0.6); margin-top: var(--sp-lg);">© 2024 ASKS Inc. All rights reserved.</p>
+            <h3>ASKS</h3>
+            <p>Enterprise AI Cost Control Platform</p>
+            <p style="font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-top: 1rem;">© 2024 ASKS Inc. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        // FAQ toggle
         document.querySelectorAll('.faq-question').forEach(q => {
             q.addEventListener('click', function() {
-                this.parentElement.classList.toggle('active');
+                const item = this.parentElement;
+                document.querySelectorAll('.faq-item.active').forEach(other => {
+                    if (other !== item) other.classList.remove('active');
+                });
+                item.classList.toggle('active');
             });
         });
     </script>
