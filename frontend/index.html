@@ -3,218 +3,256 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ASKS — Stop Runaway Cloud Bills Before They Happen</title>
+    <title>ASKS — Your $50K LLM Bill Just Hit in 47 Minutes</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+
+        nav {
+            background: white;
+            padding: 1.2rem 2rem;
+            border-bottom: 1px solid #f0f0f0;
+            position: sticky;
+            top: 0;
         }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #333;
-            line-height: 1.6;
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #667eea;
         }
-        
+
         .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px;
-            color: white;
-            text-align: center;
         }
-        
-        .hero-content {
-            max-width: 800px;
-        }
-        
+
         .hero h1 {
             font-size: 3.5rem;
             font-weight: 900;
-            margin-bottom: 20px;
+            margin-bottom: 1rem;
         }
-        
+
         .hero .subheading {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            opacity: 0.95;
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
         }
-        
-        .fear-trigger {
-            background: rgba(255, 0, 0, 0.1);
-            border-left: 4px solid #ff4444;
-            padding: 20px;
-            margin: 30px 0;
+
+        .fear-box {
+            background: rgba(255, 0, 0, 0.15);
+            border-left: 5px solid #ff4444;
+            padding: 2rem;
+            margin: 2rem 0;
             border-radius: 8px;
             font-size: 1.1rem;
             font-weight: 600;
         }
-        
-        .cta-button {
+
+        .cta-btn {
             display: inline-block;
             background: #ff6b6b;
             color: white;
-            padding: 16px 40px;
+            padding: 1rem 2.5rem;
             font-size: 1.1rem;
             font-weight: 700;
             border: none;
             border-radius: 8px;
             cursor: pointer;
-            margin-top: 20px;
-            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
-            transition: all 0.3s ease;
+            margin-top: 1rem;
+            transition: all 0.3s;
         }
-        
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
         }
-        
+
         .features {
-            background: white;
-            padding: 60px 20px;
-            text-align: left;
+            background: #f8f8f8;
+            padding: 4rem 2rem;
         }
-        
+
         .features h2 {
-            text-align: center;
             font-size: 2.5rem;
-            margin-bottom: 40px;
-            color: #333;
+            text-align: center;
+            margin-bottom: 3rem;
         }
-        
+
         .feature-grid {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 2rem;
         }
-        
+
         .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
             border: 1px solid #e0e0e0;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
-        
+
         .feature-card h3 {
             color: #667eea;
-            margin-bottom: 10px;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
         }
-        
+
         .pricing {
+            padding: 4rem 2rem;
             background: white;
-            padding: 60px 20px;
-            text-align: center;
         }
-        
+
         .pricing h2 {
             font-size: 2.5rem;
-            margin-bottom: 40px;
-            color: #333;
+            text-align: center;
+            margin-bottom: 3rem;
         }
-        
+
         .pricing-grid {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 2rem;
         }
-        
+
         .pricing-card {
+            background: white;
             border: 2px solid #e0e0e0;
-            padding: 40px;
-            border-radius: 8px;
-            text-align: left;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
         }
-        
+
         .pricing-card.popular {
             border-color: #667eea;
             transform: scale(1.05);
             box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
         }
-        
+
         .price {
             font-size: 2.5rem;
-            font-weight: 900;
             color: #667eea;
-            margin: 20px 0;
+            font-weight: 900;
+            margin: 1rem 0;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; }
+
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .pricing-card.popular { transform: scale(1); }
         }
     </style>
 </head>
 <body>
+    <nav>
+        <div class="container">
+            <div class="logo">🔒 ASKS</div>
+        </div>
+    </nav>
+
     <section class="hero">
-        <div class="hero-content">
-            <h1>🚨 Your LLM Bill Just Hit $50K</h1>
-            <p class="subheading">It took 47 minutes.</p>
-            
-            <div class="fear-trigger">
-                💥 One bad retry loop. One forgotten rate limit.
-                <br><br>
-                Now you're explaining $50K to your CFO.
-                <br><br>
-                ASKS would have stopped it at minute 3.
+        <div class="container" style="text-align: center;">
+            <h1>🚨 Your $50K LLM Bill Just Hit</h1>
+            <p class="subheading">In 47 minutes.</p>
+
+            <div class="fear-box" style="display: inline-block;">
+                💥 One bad retry loop. One forgotten rate limit.<br><br>
+                Now you're explaining <strong>$50K</strong> to your CFO.<br><br>
+                <strong>ASKS would have stopped it in minute 3.</strong>
             </div>
-            
-            <p style="font-size: 1.2rem; margin-bottom: 30px;">
+
+            <p style="font-size: 1.2rem; margin: 2rem 0; color: white;">
                 ✅ Stop runaway costs BEFORE they happen<br>
                 ✅ Enforce budgets at runtime (not after billing)<br>
-                ✅ Sleep well knowing your costs are protected
+                ✅ Sleep knowing your costs are protected
             </p>
-            
-            <button class="cta-button" onclick="document.getElementById('pricing').scrollIntoView();">
-                Get Protected Now
+
+            <button class="cta-btn" onclick="document.getElementById('pricing').scrollIntoView();">
+                🛡️ Get Protected Now
             </button>
         </div>
     </section>
-    
+
     <section class="features">
-        <h2>How ASKS Stops The Nightmare</h2>
-        <div class="feature-grid">
-            <div class="feature-card">
-                <h3>⚡ Real-Time Enforcement</h3>
-                <p>Budget limits enforced at API call time, not billing time.</p>
-            </div>
-            <div class="feature-card">
-                <h3>🛡️ Deterministic Rules</h3>
-                <p>No AI guessing. Hard budgets. Hard enforcement.</p>
-            </div>
-            <div class="feature-card">
-                <h3>📊 Spend Autopsy</h3>
-                <p>Automatic post-mortems: "This call would have cost $500."</p>
+        <div class="container">
+            <h2>How ASKS Stops The Nightmare</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>⚡ Real-Time Enforcement</h3>
+                    <p>Budget limits enforced at API call time, not billing time.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🛡️ Deterministic Rules</h3>
+                    <p>No AI guessing. Hard budgets. Hard enforcement.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📊 Spend Autopsy</h3>
+                    <p>Every trigger shows: "This call would have cost $500."</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🤖 Agent-Safe Budgets</h3>
+                    <p>Per-agent budgets prevent runaway orchestration.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔧 Easy Integration</h3>
+                    <p>SDK drops in minutes. Works with LLMs, APIs, jobs.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🎯 Fail-Soft Options</h3>
+                    <p>Downgrade models, reduce concurrency, or hard stop.</p>
+                </div>
             </div>
         </div>
     </section>
-    
+
     <section class="pricing" id="pricing">
-        <h2>Simple, Transparent Pricing</h2>
-        
-        <div class="pricing-grid">
-            <div class="pricing-card">
-                <h3>🚨 Emergency</h3>
-                <div class="price">$5,000</div>
-                <p style="color: #666; margin-bottom: 20px;">One-time. Setup in 48 hours.</p>
-                <button class="cta-button" style="width: 100%;">Contact Sales</button>
-            </div>
-            
-            <div class="pricing-card popular">
-                <h3>🚀 Startup</h3>
-                <div class="price">$249<span style="font-size: 1rem;">/month</span></div>
-                <button class="cta-button" style="width: 100%;">Start Free Trial</button>
-            </div>
-            
-            <div class="pricing-card">
-                <h3>💎 Pro</h3>
-                <div class="price">$749<span style="font-size: 1rem;">/month</span></div>
-                <button class="cta-button" style="width: 100%;">Get Custom Quote</button>
+        <div class="container">
+            <h2>Simple, Transparent Pricing</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>🚨 Emergency</h3>
+                    <div class="price">$5,000</div>
+                    <p>One-time. Setup in 48 hours.</p>
+                    <button class="cta-btn">Contact Sales</button>
+                </div>
+
+                <div class="pricing-card popular">
+                    <h3>🚀 Startup</h3>
+                    <div class="price">$249</div>
+                    <p style="font-size: 0.9rem; color: #666;">/month</p>
+                    <button class="cta-btn">Start Free Trial</button>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>💎 Pro</h3>
+                    <div class="price">$749</div>
+                    <p style="font-size: 0.9rem; color: #666;">/month</p>
+                    <button class="cta-btn">Get Custom Quote</button>
+                </div>
             </div>
         </div>
     </section>
+
+    <footer>
+        <p>&copy; 2024 ASKS Platform. Built for founders.</p>
+    </footer>
 </body>
 </html>
