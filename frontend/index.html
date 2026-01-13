@@ -3,694 +3,593 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ASKS: Runtime budget enforcement for AI/LLM costs. Enterprise-grade cost protection built by 12 expert specialists. 5-10x better conversions.">
-    <meta name="theme-color" content="#667eea">
-    <title>ASKS — Enterprise Budget Enforcement | Expert-Built Cost Control</title>
+    <meta name="description" content="ASKS - Enterprise AI Cost Control Platform">
+    <title>ASKS - Enterprise AI Cost Control</title>
     <style>
-        /* ═══════════════════════════════════════════════════════════
-           EXPERT DESIGNER: ADVANCED COLOR SYSTEM (PANTONE-MATCHED)
-           ═══════════════════════════════════════════════════════════ */
+        /* ═══════════════════════════════════════════════════════════════
+           ULTRA-ADVANCED V3 DESIGN SYSTEM
+           Ultra-Deep Navy + Strategic Teal + 24K Gold
+           5.8rem / Weight 900 / -2.5px Typography
+           Advanced Neuroscience Psychology Integration
+           ═══════════════════════════════════════════════════════════════ */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         :root {
-            /* GRAPHIC DESIGNER: Primary Colors */
-            --primary-trust: #667eea;        /* Pantone 7682C - Trust, authority */
-            --primary-dark: #5568d3;         /* Darker trust (hover states) */
-            --primary-light: #8b9ced;        /* Lighter trust (backgrounds) */
-            
-            /* GRAPHIC DESIGNER: Action Colors */
-            --action-urgent: #ff6b6b;        /* Pantone 16-1546 - Urgency, action */
-            --action-dark: #ee5a52;          /* Darker action (hover) */
-            --action-light: #ff8787;         /* Lighter action (backgrounds) */
-            
-            /* GRAPHIC DESIGNER: Innovation/Power */
-            --accent-purple: #764ba2;        /* Pantone 18-1546 - Innovation */
-            --accent-purple-light: #9b6cb5;  /* Lighter purple (accents) */
-            
-            /* GRAPHIC DESIGNER: Premium */
-            --premium-gold: #ffc107;         /* Pantone 13-0755 - Premium, achievement */
-            --premium-gold-dark: #e6a810;    /* Darker gold (hover) */
-            
-            /* GRAPHIC DESIGNER: Neutrals (5-shade system) */
-            --neutral-1: #f8f9fc;            /* Premium white (primary background) */
-            --neutral-2: #f0f1f6;            /* Light gray (secondary background) */
-            --neutral-3: #e6e6e6;            /* Medium gray (borders) */
-            --neutral-4: #8a8a8a;            /* Gray (secondary text) */
-            --neutral-5: #1a1a1a;            /* Charcoal (primary text) */
-            
-            /* GRAPHIC DESIGNER: Dark Mode */
-            --dark-bg: #0f0f0f;
-            --dark-surface: #1a1a1a;
-            --dark-text: #f5f5f5;
-            
-            /* GRAPHIC DESIGNER: Success/Validation */
-            --success-color: #2ecc71;        /* Green (validation, affirmation) */
-            
-            /* UI/UX DESIGNER: Typography System */
-            --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
-            --font-mono: 'Monaco', 'Menlo', monospace;
-            
-            /* UI/UX DESIGNER: Spacing System (8px grid) */
-            --space-xs: 0.5rem;
-            --space-sm: 1rem;
-            --space-md: 1.5rem;
-            --space-lg: 2rem;
-            --space-xl: 3rem;
-            --space-2xl: 4rem;
-            --space-3xl: 5rem;
-            --space-4xl: 6rem;
-            
-            /* UI/UX DESIGNER: Shadows (3-level system) */
-            --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
-            --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
-            --shadow-lg: 0 20px 40px rgba(0,0,0,0.15);
-            
-            /* UI/UX DESIGNER: Border Radius */
-            --radius-sm: 6px;
-            --radius-md: 12px;
-            --radius-lg: 16px;
-            
-            /* DEVELOPER: Animation Timing */
-            --duration-fast: 150ms;
-            --duration-normal: 300ms;
-            --ease-smooth: cubic-bezier(0.34, 1.56, 0.64, 1);
-            --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+            /* V3 COLORS - ULTRA-PROFESSIONAL */
+            --primary-navy: #0d1b3d;
+            --secondary-teal: #2d5f8d;
+            --accent-red: #ef4444;
+            --success-gold: #d4af37;
+            --neutral-white: #f8fafc;
+            --neutral-light: #f8fafc;
+            --text-primary: #0d1b3d;
+            --text-secondary: #8a92a6;
+            --border-color: #e0e6f2;
+
+            /* TYPOGRAPHY */
+            --font-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+            /* V3 SPACING - FIBONACCI SEQUENCE */
+            --sp-xs: 4px;
+            --sp-sm: 8px;
+            --sp-md: 12px;
+            --sp-lg: 16px;
+            --sp-xl: 40px;
+            --sp-2xl: 64px;
+            --sp-3xl: 104px;
+
+            /* SHADOWS */
+            --shadow-sm: 0 2px 12px rgba(13, 27, 61, 0.06);
+            --shadow-md: 0 4px 16px rgba(13, 27, 61, 0.12);
+            --shadow-lg: 0 24px 48px rgba(13, 27, 61, 0.12);
         }
 
         @media (prefers-color-scheme: dark) {
             :root {
-                --neutral-1: #0f0f0f;
-                --neutral-2: #1a1a1a;
-                --neutral-3: #3a3a3a;
-                --neutral-4: #b0b0b0;
-                --neutral-5: #f5f5f5;
+                --neutral-light: #0f1419;
+                --neutral-white: #1a1f2e;
+                --text-primary: #f0f4f8;
+                --border-color: #2a3142;
             }
         }
 
-        /* ═══════════════════════════════════════════════════════════
-           RESET + DEVELOPER: SEMANTIC HTML FOUNDATION
-           ═══════════════════════════════════════════════════════════ */
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; font-size: 16px; }
-        body {
-            font-family: var(--font-family);
-            color: var(--neutral-5);
-            background: var(--neutral-1);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
         }
 
-        /* ═══════════════════════════════════════════════════════════
-           TYPOGRAPHY EXPERT SYSTEM (GRAPHIC + COPYWRITER)
-           ═══════════════════════════════════════════════════════════ */
+        body {
+            font-family: var(--font-base);
+            color: var(--text-primary);
+            background-color: var(--neutral-light);
+            line-height: 1.85;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           TYPOGRAPHY V3 - OPTICAL EXCELLENCE
+           ═══════════════════════════════════════════════════════════════ */
 
         h1 {
-            font-size: 4.5rem;
+            font-size: clamp(2.5rem, 6vw, 5.8rem);
             font-weight: 900;
-            line-height: 1.1;
-            letter-spacing: -1.2px;
-            color: var(--neutral-5);
+            letter-spacing: -2.5px;
+            line-height: 1.15;
+            color: var(--primary-navy);
+            margin-bottom: var(--sp-lg);
         }
 
         h2 {
-            font-size: 3rem;
-            font-weight: 900;
-            line-height: 1.2;
-            letter-spacing: -0.5px;
-            color: var(--neutral-5);
-            margin-bottom: var(--space-md);
+            font-size: clamp(2rem, 4vw, 3.8rem);
+            font-weight: 700;
+            letter-spacing: -1.8px;
+            line-height: 1.3;
+            color: var(--primary-navy);
+            margin-bottom: var(--sp-xl);
         }
 
         h3 {
-            font-size: 1.5rem;
+            font-size: clamp(1.5rem, 2.5vw, 2.2rem);
             font-weight: 700;
-            line-height: 1.3;
-            color: var(--neutral-5);
+            letter-spacing: -1.2px;
+            color: var(--primary-navy);
+            margin-bottom: var(--sp-lg);
         }
 
         p {
-            font-size: 1rem;
-            line-height: 1.7;
-            color: var(--neutral-4);
-            margin-bottom: var(--space-lg);
+            font-size: clamp(1rem, 1.125vw, 1.1875rem);
+            line-height: 1.85;
+            color: var(--text-primary);
+            margin-bottom: var(--sp-lg);
         }
 
-        small {
-            font-size: 0.875rem;
-            line-height: 1.5;
-            color: var(--neutral-4);
+        .text-muted {
+            color: var(--text-secondary);
         }
 
-        /* ═══════════════════════════════════════════════════════════
-           CONTAINER + LAYOUT (UI/UX DESIGNER)
-           ═══════════════════════════════════════════════════════════ */
+        /* ═══════════════════════════════════════════════════════════════
+           COMPONENTS
+           ═══════════════════════════════════════════════════════════════ */
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 var(--space-lg);
+            padding: 0 var(--sp-lg);
         }
 
-        section {
-            padding: var(--space-4xl) var(--space-lg);
-        }
-
-        /* ═══════════════════════════════════════════════════════════
-           HEADER (MULTIPLE EXPERTS)
-           ═══════════════════════════════════════════════════════════ */
-
-        header {
-            position: sticky;
-            top: 0;
-            background: var(--neutral-1);
-            border-bottom: 1px solid var(--neutral-3);
-            padding: var(--space-md) 0;
-            z-index: 1000;
-            box-shadow: var(--shadow-sm);
-        }
-
-        header .container {
-            display: flex;
-            justify-content: space-between;
+        .button {
+            display: inline-flex;
             align-items: center;
-        }
-
-        .logo {
-            font-size: 2rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, var(--primary-trust), var(--accent-purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .cta-header {
-            background: linear-gradient(135deg, var(--action-urgent), var(--action-dark));
-            color: white;
-            padding: var(--space-sm) var(--space-lg);
-            border-radius: var(--radius-md);
-            font-weight: 600;
+            justify-content: center;
+            padding: 14px 28px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1.0625rem;
+            letter-spacing: 0.5px;
+            text-decoration: none;
             border: none;
             cursor: pointer;
-            transition: all var(--duration-normal);
+            transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
+            white-space: nowrap;
         }
 
-        .cta-header:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
+        .button:hover {
+            transform: scale(1.02) translateY(-4px);
+            box-shadow: 0 12px 32px rgba(239, 68, 68, 0.25);
         }
 
-        /* ═══════════════════════════════════════════════════════════
-           HERO SECTION (PSYCHOLOGIST + COPYWRITER + DESIGNER)
-           ═══════════════════════════════════════════════════════════ */
+        .button-primary {
+            background: var(--accent-red);
+            color: white;
+            box-shadow: 0 4px 16px rgba(239, 68, 68, 0.15);
+        }
+
+        .button-secondary {
+            background: white;
+            color: var(--primary-navy);
+            border: 2px solid var(--primary-navy);
+        }
+
+        .button-secondary:hover {
+            background: var(--primary-navy);
+            color: white;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           LAYOUT SECTIONS
+           ═══════════════════════════════════════════════════════════════ */
 
         .hero {
-            background: linear-gradient(135deg, var(--primary-trust) 0%, var(--accent-purple) 100%);
-            color: white;
-            padding: var(--space-4xl) var(--space-lg);
-            min-height: 100vh;
+            background: var(--neutral-light);
+            padding: var(--sp-3xl) var(--sp-lg);
+            text-align: center;
             display: flex;
             align-items: center;
-            position: relative;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+            justify-content: center;
+            min-height: 650px;
         }
 
         .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 900px;
+            max-width: 850px;
         }
 
-        .hero h1 {
-            color: white;
-            margin-bottom: var(--space-lg);
-            animation: fadeInUp 0.8s ease-out;
+        .alert-box {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.08), rgba(239, 68, 68, 0.04));
+            border-left: 4px solid var(--accent-red);
+            padding: var(--sp-xl);
+            border-radius: 10px;
+            margin: var(--sp-2xl) 0;
+            text-align: left;
         }
 
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .hero-subheading {
-            font-size: 1.5rem;
-            margin-bottom: var(--space-2xl);
-            color: rgba(255,255,255,0.95);
-        }
-
-        .fear-trigger {
-            background: rgba(255, 107, 107, 0.2);
-            border-left: 6px solid var(--action-urgent);
-            padding: var(--space-2xl);
-            margin: var(--space-2xl) 0;
-            border-radius: var(--radius-md);
-            font-size: 1.1rem;
-            color: white;
-            line-height: 1.8;
-        }
-
-        .btn-group {
+        .button-group {
             display: flex;
-            gap: var(--space-md);
-            margin-top: var(--space-2xl);
+            gap: var(--sp-lg);
+            justify-content: center;
             flex-wrap: wrap;
+            margin-top: var(--sp-2xl);
         }
 
-        .btn {
-            padding: var(--space-md) var(--space-lg);
-            border-radius: var(--radius-md);
-            font-weight: 600;
-            border: none;
-            cursor: pointer;
-            transition: all var(--duration-normal);
-            font-size: 1rem;
+        section {
+            padding: var(--sp-3xl) var(--sp-lg);
         }
 
-        .btn-primary {
-            background: linear-gradient(135deg, var(--action-urgent), var(--action-dark));
-            color: white;
-            box-shadow: var(--shadow-md);
+        .section-light {
+            background: var(--neutral-light);
         }
 
-        .btn-primary:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .btn-secondary {
-            background: rgba(255,255,255,0.2);
-            color: white;
-            border: 2px solid white;
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255,255,255,0.3);
-            transform: translateY(-2px);
-        }
-
-        /* ═══════════════════════════════════════════════════════════
-           SECTION STYLES
-           ═══════════════════════════════════════════════════════════ */
-
-        .section-light { background: var(--neutral-1); }
         .section-dark {
-            background: var(--neutral-5);
+            background: var(--primary-navy);
             color: white;
         }
 
-        .section-dark h2, .section-dark h3 { color: white; }
-        .section-dark p { color: rgba(255,255,255,0.85); }
+        .section-dark h2,
+        .section-dark h3 {
+            color: white;
+        }
 
         .section-title {
-            font-size: 3rem;
             text-align: center;
-            margin-bottom: var(--space-lg);
+            margin-bottom: var(--sp-2xl);
         }
 
-        .section-subtitle {
-            font-size: 1.2rem;
-            text-align: center;
-            color: var(--neutral-4);
-            max-width: 700px;
-            margin: 0 auto var(--space-3xl);
-        }
+        /* ═══════════════════════════════════════════════════════════════
+           GRID & CARDS
+           ═══════════════════════════════════════════════════════════════ */
 
-        /* ═══════════════════════════════════════════════════════════
-           PROBLEM CARDS (CONTENT WRITER + DESIGNER + PSYCHOLOGIST)
-           ═══════════════════════════════════════════════════════════ */
-
-        .problem-grid {
+        .grid {
             display: grid;
+            gap: var(--sp-2xl);
+            margin-top: var(--sp-2xl);
+        }
+
+        .grid-2 {
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: var(--space-xl);
         }
 
-        .problem-card {
-            background: var(--neutral-2);
-            padding: var(--space-xl);
-            border-radius: var(--radius-lg);
-            border-left: 6px solid var(--action-urgent);
-            transition: all var(--duration-normal);
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         }
 
-        .problem-card:hover {
-            transform: translateY(-8px);
+        .grid-4 {
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        }
+
+        .card {
+            background: white;
+            border-radius: 14px;
+            padding: 20px;
+            border: 2px solid var(--border-color);
+            transition: all 300ms cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .card:hover {
+            transform: translateY(-16px);
             box-shadow: var(--shadow-lg);
         }
 
-        .problem-card h3 {
-            color: var(--action-urgent);
-            margin-bottom: var(--space-md);
+        .card-problem {
+            border-left: 4px solid var(--accent-red);
         }
 
-        /* ═══════════════════════════════════════════════════════════
-           SOLUTION SECTION (PSYCHOLOGIST + DEVELOPER)
-           ═══════════════════════════════════════════════════════════ */
-
-        .solution-section {
-            background: linear-gradient(135deg, var(--neutral-5) 0%, #2d2d2d 100%);
-            color: white;
+        .card-feature {
+            border-top: 4px solid var(--primary-navy);
+            transition: border-color 300ms ease;
         }
 
-        .steps-grid {
+        .card-feature:hover {
+            border-top-color: var(--success-gold);
+        }
+
+        .card h3 {
+            margin-bottom: var(--sp-md);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           TRUST BADGES
+           ═══════════════════════════════════════════════════════════════ */
+
+        .badge-item {
+            text-align: center;
+            padding: var(--sp-xl);
+        }
+
+        .badge-icon {
+            font-size: 3rem;
+            margin-bottom: var(--sp-md);
+        }
+
+        .badge-item h3 {
+            font-size: clamp(1rem, 1.125vw, 1.25rem);
+            margin-bottom: var(--sp-sm);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           SOLUTION SECTION
+           ═══════════════════════════════════════════════════════════════ */
+
+        .solution-steps {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: var(--space-2xl);
-            margin-top: var(--space-3xl);
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: var(--sp-2xl);
+            margin-top: var(--sp-2xl);
         }
 
         .step {
-            text-align: center;
             position: relative;
-            padding-top: var(--space-2xl);
+            padding-left: 60px;
         }
 
         .step-number {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--primary-trust), var(--accent-purple));
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 48px;
+            height: 48px;
+            background: var(--success-gold);
+            color: var(--primary-navy);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
             font-weight: 900;
-            color: white;
-            margin: 0 auto var(--space-md);
+            font-size: 1.5rem;
         }
 
-        /* ═══════════════════════════════════════════════════════════
-           FEATURES GRID
-           ═══════════════════════════════════════════════════════════ */
+        /* ═══════════════════════════════════════════════════════════════
+           STATS
+           ═══════════════════════════════════════════════════════════════ */
 
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--space-xl);
+        .stat {
+            text-align: center;
+            padding: var(--sp-xl);
         }
 
-        .feature-card {
-            background: var(--neutral-2);
-            padding: var(--space-xl);
-            border-radius: var(--radius-lg);
-            border-top: 4px solid var(--primary-trust);
-            transition: all var(--duration-normal);
+        .stat-number {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 900;
+            color: var(--primary-navy);
+            letter-spacing: -1px;
         }
 
-        .feature-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
-            border-top-color: var(--action-urgent);
+        .section-dark .stat-number {
+            color: var(--success-gold);
         }
 
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: var(--space-md);
-        }
+        /* ═══════════════════════════════════════════════════════════════
+           TESTIMONIALS
+           ═══════════════════════════════════════════════════════════════ */
 
-        /* ═══════════════════════════════════════════════════════════
-           TESTIMONIALS (CONTENT WRITER + DESIGNER)
-           ═══════════════════════════════════════════════════════════ */
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: var(--space-xl);
-        }
-
-        .testimonial {
+        .card-testimonial {
             background: white;
-            padding: var(--space-xl);
-            border-radius: var(--radius-lg);
-            border-left: 4px solid var(--premium-gold);
-            box-shadow: var(--shadow-sm);
-            transition: all var(--duration-normal);
+            border-radius: 12px;
+            padding: var(--sp-xl);
+            border: 2px solid var(--border-color);
         }
 
-        .testimonial:hover {
-            box-shadow: var(--shadow-md);
-            transform: translateY(-4px);
+        .card-testimonial .stars {
+            color: var(--success-gold);
+            font-size: 1.25rem;
+            margin-bottom: var(--sp-md);
+            letter-spacing: 2px;
         }
 
-        .stars {
-            color: var(--premium-gold);
-            margin-bottom: var(--space-md);
-            font-size: 1.2rem;
-        }
-
-        .testimonial-text {
-            color: var(--neutral-4);
+        .card-testimonial .quote {
+            font-size: clamp(0.95rem, 1vw, 1.125rem);
+            color: var(--text-secondary);
+            margin-bottom: var(--sp-lg);
             font-style: italic;
-            margin-bottom: var(--space-md);
-            line-height: 1.8;
+            line-height: 1.85;
         }
 
-        .testimonial-author {
-            font-weight: 700;
-            color: var(--neutral-5);
+        .card-testimonial .author {
+            font-weight: 900;
+            color: var(--primary-navy);
+            margin-bottom: 4px;
         }
 
-        .testimonial-role {
-            color: var(--neutral-4);
-            font-size: 0.9rem;
-        }
+        /* ═══════════════════════════════════════════════════════════════
+           PRICING
+           ═══════════════════════════════════════════════════════════════ */
 
-        /* ═══════════════════════════════════════════════════════════
-           PRICING (CRO SPECIALIST + DESIGNER + PSYCHOLOGIST)
-           ═══════════════════════════════════════════════════════════ */
-
-        .pricing-grid {
+        .pricing-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--space-xl);
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--sp-2xl);
+            margin-top: var(--sp-2xl);
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .pricing-card {
             background: white;
-            padding: var(--space-xl);
-            border-radius: var(--radius-lg);
-            border: 2px solid var(--neutral-3);
-            transition: all var(--duration-normal);
-            display: flex;
-            flex-direction: column;
+            border: 2px solid var(--border-color);
+            border-radius: 14px;
+            padding: var(--sp-2xl);
+            text-align: center;
             position: relative;
-        }
-
-        .pricing-card:hover {
-            border-color: var(--primary-trust);
-            box-shadow: var(--shadow-md);
+            transition: all 300ms ease;
         }
 
         .pricing-card.featured {
-            border-color: var(--primary-trust);
+            border-color: var(--primary-navy);
             transform: scale(1.05);
-            box-shadow: 0 25px 50px rgba(102, 126, 234, 0.2);
+            box-shadow: var(--shadow-lg);
         }
 
-        .pricing-badge {
+        .pricing-card.featured::before {
+            content: 'Most Popular';
             position: absolute;
             top: -12px;
-            left: 20px;
-            background: linear-gradient(135deg, var(--action-urgent), var(--action-dark));
-            color: white;
-            padding: var(--space-xs) var(--space-md);
-            border-radius: var(--radius-md);
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--success-gold);
+            color: var(--primary-navy);
+            padding: 6px 16px;
+            border-radius: 20px;
             font-size: 0.75rem;
-            font-weight: 700;
+            font-weight: 900;
+            letter-spacing: 0.5px;
         }
 
-        .pricing-name {
-            font-size: 1.5rem;
+        .pricing-amount {
+            font-size: clamp(2rem, 3vw, 3rem);
             font-weight: 900;
-            margin: var(--space-lg) 0 var(--space-sm);
-            color: var(--neutral-5);
-        }
-
-        .pricing-price {
-            font-size: 3.5rem;
-            font-weight: 900;
-            color: var(--primary-trust);
-            margin-bottom: var(--space-sm);
+            color: var(--primary-navy);
+            letter-spacing: -1px;
+            margin: var(--sp-xl) 0;
         }
 
         .pricing-features {
-            flex: 1;
-            margin: var(--space-lg) 0;
+            list-style: none;
+            margin: var(--sp-xl) 0;
+            text-align: left;
         }
 
-        .pricing-feature {
-            padding: var(--space-sm) 0;
-            color: var(--neutral-4);
-            display: flex;
-            gap: var(--space-md);
-            border-bottom: 1px solid var(--neutral-3);
+        .pricing-features li {
+            padding: var(--sp-md) 0;
+            color: var(--text-primary);
+            border-bottom: 1px solid var(--border-color);
         }
 
-        .pricing-feature:last-child { border-bottom: none; }
-
-        .pricing-feature::before {
-            content: '✓';
-            color: var(--success-color);
+        .pricing-features li:before {
+            content: '✓ ';
+            color: var(--success-gold);
             font-weight: 900;
-            flex-shrink: 0;
+            margin-right: var(--sp-sm);
         }
 
-        /* ═══════════════════════════════════════════════════════════
-           FAQ (CONTENT WRITER + DEVELOPER + CRO)
-           ═══════════════════════════════════════════════════════════ */
-
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
+        .pricing-card .button {
+            width: 100%;
+            margin-top: var(--sp-xl);
         }
+
+        /* ═══════════════════════════════════════════════════════════════
+           FAQ
+           ═══════════════════════════════════════════════════════════════ */
 
         .faq-item {
-            margin-bottom: var(--space-lg);
-            border-bottom: 1px solid var(--neutral-3);
-            padding-bottom: var(--space-lg);
+            background: white;
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            margin-bottom: var(--sp-lg);
+            overflow: hidden;
         }
 
-        .faq-item:last-child { border-bottom: none; }
-
         .faq-question {
-            font-size: 1.1rem;
-            font-weight: 700;
+            padding: var(--sp-xl);
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            color: var(--neutral-5);
-            user-select: none;
-            transition: color var(--duration-normal);
+            background: var(--neutral-light);
+            transition: all 300ms ease;
         }
 
-        .faq-question:hover { color: var(--primary-trust); }
+        .faq-question:hover {
+            background: #eef0f5;
+        }
 
         .faq-toggle {
-            transition: transform var(--duration-normal);
-        }
-
-        .faq-answer {
-            color: var(--neutral-4);
-            line-height: 1.8;
-            display: none;
-            margin-top: var(--space-md);
-        }
-
-        .faq-item.active .faq-answer {
-            display: block;
-            animation: slideDown var(--duration-normal);
+            font-size: 1.5rem;
+            color: var(--primary-navy);
+            transition: transform 200ms ease;
         }
 
         .faq-item.active .faq-toggle {
             transform: rotate(180deg);
         }
 
+        .faq-answer {
+            padding: var(--sp-xl);
+            color: var(--text-secondary);
+            display: none;
+            border-top: 2px solid var(--border-color);
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+            animation: slideDown 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
         @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* ═══════════════════════════════════════════════════════════
-           FINAL CTA (COPYWRITER + PSYCHOLOGIST)
-           ═══════════════════════════════════════════════════════════ */
-
-        .final-cta {
-            background: linear-gradient(135deg, var(--primary-trust) 0%, var(--accent-purple) 100%);
-            color: white;
-            padding: var(--space-4xl) var(--space-lg);
-            text-align: center;
-        }
-
-        .final-cta h2 {
-            color: white;
-            margin-bottom: var(--space-md);
-        }
-
-        .final-cta p {
-            color: rgba(255,255,255,0.95);
-            font-size: 1.2rem;
-            margin-bottom: var(--space-xl);
-        }
-
-        /* ═══════════════════════════════════════════════════════════
-           FOOTER (LEGAL + ACCESSIBILITY EXPERT)
-           ═══════════════════════════════════════════════════════════ */
-
-        footer {
-            background: var(--neutral-5);
-            color: var(--neutral-4);
-            padding: var(--space-xl) var(--space-lg);
-            text-align: center;
-            border-top: 1px solid var(--neutral-3);
-        }
-
-        footer a {
-            color: var(--primary-trust);
-            text-decoration: none;
-        }
-
-        footer a:hover { color: var(--action-urgent); }
-
-        /* ═══════════════════════════════════════════════════════════
-           RESPONSIVE + ACCESSIBILITY
-           ═══════════════════════════════════════════════════════════ */
-
-        @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
-            h2 { font-size: 2rem; }
-            .hero h1 { font-size: 2.8rem; }
-            .pricing-card.featured { transform: scale(1); }
-            .btn-group { flex-direction: column; }
-            .btn { width: 100%; }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation-duration: 0.01ms !important;
-                transition-duration: 0.01ms !important;
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
 
-        :focus-visible {
-            outline: 3px solid var(--primary-trust);
-            outline-offset: 2px;
+        /* ═══════════════════════════════════════════════════════════════
+           FOOTER
+           ═══════════════════════════════════════════════════════════════ */
+
+        footer {
+            background: var(--primary-navy);
+            color: white;
+            padding: var(--sp-2xl) var(--sp-lg);
+            text-align: center;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           RESPONSIVE
+           ═══════════════════════════════════════════════════════════════ */
+
+        @media (max-width: 768px) {
+            .button-group {
+                flex-direction: column;
+            }
+
+            .button {
+                width: 100%;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+
+            .solution-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: 500px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- HEADER -->
-    <header>
-        <div class="container">
-            <div class="logo">🔒 ASKS</div>
-            <button class="cta-header" onclick="document.querySelector('.final-cta').scrollIntoView({behavior: 'smooth'});">Protected Now</button>
-        </div>
-    </header>
-
-    <!-- HERO -->
+    <!-- HERO SECTION -->
     <section class="hero">
         <div class="hero-content">
             <h1>Your $50K LLM Bill Just Hit</h1>
-            <p class="hero-subheading">In 47 minutes. You're explaining it to your CFO at 2 AM.</p>
+            <p class="text-muted" style="font-size: 1.25rem; margin-bottom: var(--sp-lg);">In 47 minutes. You're explaining it to your CFO at 2 AM.</p>
             
-            <div class="fear-trigger">
-                💥 One bad retry loop. One forgotten rate limit.<br><br>
-                <strong>Now you're explaining $50K to finance.</strong><br><br>
-                <strong>ASKS would have stopped it in minute 3.</strong>
+            <div class="alert-box">
+                <p style="margin-bottom: var(--sp-sm);"><strong>⚠️ One bad retry loop. One forgotten rate limit.</strong></p>
+                <p style="margin-bottom: var(--sp-sm);"><strong>Now you're explaining $50K to finance.</strong></p>
+                <p style="margin-bottom: 0;"><strong>ASKS would have stopped it in minute 3.</strong></p>
             </div>
 
-            <div class="btn-group">
-                <button class="btn btn-primary" onclick="document.querySelector('#pricing').scrollIntoView({behavior: 'smooth'});">🛡️ See Plans</button>
-                <button class="btn btn-secondary" onclick="document.querySelector('.solution-section').scrollIntoView({behavior: 'smooth'});">How It Works</button>
+            <div class="button-group">
+                <button class="button button-primary">🛡️ See Plans</button>
+                <button class="button button-secondary">→ How It Works</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST BADGES -->
+    <section class="section-light">
+        <div class="container">
+            <div class="grid grid-4">
+                <div class="badge-item">
+                    <div class="badge-icon">🔒</div>
+                    <h3>Enterprise Grade</h3>
+                    <p class="text-muted">Security-first</p>
+                </div>
+                <div class="badge-item">
+                    <div class="badge-icon">⚡</div>
+                    <h3>Real-Time</h3>
+                    <p class="text-muted">Instant enforcement</p>
+                </div>
+                <div class="badge-item">
+                    <div class="badge-icon">📊</div>
+                    <h3>Complete Visibility</h3>
+                    <p class="text-muted">Track everything</p>
+                </div>
+                <div class="badge-item">
+                    <div class="badge-icon">✅</div>
+                    <h3>Auto-Scaling</h3>
+                    <p class="text-muted">Grows with you</p>
+                </div>
             </div>
         </div>
     </section>
@@ -698,64 +597,65 @@
     <!-- PROBLEMS -->
     <section class="section-light">
         <div class="container">
-            <h2 class="section-title">The Cost Crisis is Real</h2>
-            <p class="section-subtitle">Every engineering team faces these exact nightmares</p>
-
-            <div class="problem-grid">
-                <div class="problem-card">
-                    <h3>🌀 Retry Storms</h3>
-                    <p>One bug causes exponential API calls. By morning: $15K gone. No way to stop it mid-execution.</p>
+            <div class="section-title">
+                <h2>The Problems We Solve</h2>
+            </div>
+            <div class="grid grid-2">
+                <div class="card card-problem">
+                    <h3>Runaway Costs</h3>
+                    <p class="text-muted">LLM costs spike overnight with no warning. By the time you notice, you're liable for $50K+.</p>
                 </div>
-                <div class="problem-card">
-                    <h3>🤖 Agent Recursion</h3>
-                    <p>Agents loop infinitely. Costs spike 10–100x in hours. Dashboard notification comes 24 hours late.</p>
+                <div class="card card-problem">
+                    <h3>Rate Limit Chaos</h3>
+                    <p class="text-muted">Forgotten rate limits cause retry storms. Exponential multipliers. Notification hell.</p>
                 </div>
-                <div class="problem-card">
-                    <h3>📈 Silent Scaling</h3>
-                    <p>Traffic spikes trigger autoscaling. API calls multiply invisibly. Bill is the first warning.</p>
+                <div class="card card-problem">
+                    <h3>No Insight</h3>
+                    <p class="text-muted">Black box spending. You don't know which model caused the spike.</p>
                 </div>
-                <div class="problem-card">
-                    <h3>❌ Billing Only Tells You</h3>
-                    <p>Dashboard shows damage after money spent. By then, CFO's calling. Prevention wasn't possible.</p>
+                <div class="card card-problem">
+                    <h3>Manual Enforcement</h3>
+                    <p class="text-muted">You can't pause keys fast enough. Costs continue climbing.</p>
                 </div>
-                <div class="problem-card">
-                    <h3>😰 Sleep Anxiety</h3>
-                    <p>You can't leave code in production without fear. One bug = personal financial liability.</p>
+                <div class="card card-problem">
+                    <h3>Finance Surprises</h3>
+                    <p class="text-muted">Monthly overruns destroy projections. CFO loses trust in estimates.</p>
                 </div>
-                <div class="problem-card">
-                    <h3>💸 No Granular Control</h3>
-                    <p>No per-app, per-user, per-agent budgets. You're hostage to vendor rate limits. Helpless.</p>
+                <div class="card card-problem">
+                    <h3>Scaling Fear</h3>
+                    <p class="text-muted">Every new feature feels like a cost bomb waiting to explode.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- SOLUTION -->
-    <section class="solution-section">
+    <section class="section-dark">
         <div class="container">
-            <h2 class="section-title">How ASKS Stops It</h2>
-            <p class="section-subtitle">Runtime budget enforcement that prevents catastrophe before it costs you</p>
-
-            <div class="steps-grid">
+            <div class="section-title">
+                <h2>How ASKS Works</h2>
+                <p style="color: rgba(255,255,255,0.85);">Real-time budget enforcement that stops overspend before it starts</p>
+            </div>
+            <div class="solution-steps">
                 <div class="step">
                     <div class="step-number">1</div>
                     <h3>You Set Budgets</h3>
-                    <p>Define hard limits: per-execution, per-user, per-agent. Not suggestions. Hard stops.</p>
+                    <p class="text-muted">Define cost limits by model, feature, or user.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
                     <h3>ASKS Watches</h3>
-                    <p>Before every API call, ASKS checks: "Is this within budget?" Real-time enforcement.</p>
+                    <p class="text-muted">Every token request flows through ASKS in real-time.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
-                    <h3>Action Triggered</h3>
-                    <p>Budget exceeded? Fail-soft (degrade gracefully) or hard-stop (prevent call). Your choice.</p>
+                    <h3>Instant Enforcement</h3>
+                    <p class="text-muted">When budget hits: pause keys, block requests, trigger alerts.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">4</div>
-                    <h3>You Get Proof</h3>
-                    <p>Instant log: "This call would have cost $500. Budget was $100. Stopped automatically."</p>
+                    <h3>Complete Visibility</h3>
+                    <p class="text-muted">Dashboard shows cost by model, feature, user.</p>
                 </div>
             </div>
         </div>
@@ -764,39 +664,60 @@
     <!-- FEATURES -->
     <section class="section-light">
         <div class="container">
-            <h2 class="section-title">ASKS Capabilities</h2>
-            <p class="section-subtitle">Everything you need for complete cost protection</p>
+            <div class="section-title">
+                <h2>Enterprise Features</h2>
+            </div>
+            <div class="grid grid-3">
+                <div class="card card-feature">
+                    <h3>Budget Guard</h3>
+                    <p class="text-muted">Set limits. ASKS auto-stops when exhausted. Zero overage.</p>
+                </div>
+                <div class="card card-feature">
+                    <h3>Real-Time Analytics</h3>
+                    <p class="text-muted">Dashboard shows cost by model. See where every dollar goes.</p>
+                </div>
+                <div class="card card-feature">
+                    <h3>Alert System</h3>
+                    <p class="text-muted">Slack, email, webhooks. Get notified at 50%, 80%, 100%.</p>
+                </div>
+                <div class="card card-feature">
+                    <h3>User-Level Control</h3>
+                    <p class="text-muted">Set budgets per user, team, feature. Prevent expensive usage.</p>
+                </div>
+                <div class="card card-feature">
+                    <h3>Model Optimization</h3>
+                    <p class="text-muted">Recommendations to optimize choices. Use cheaper models.</p>
+                </div>
+                <div class="card card-feature">
+                    <h3>Compliance Reports</h3>
+                    <p class="text-muted">Export spending reports. Audit trail for every request.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3>Real-Time Enforcement</h3>
-                    <p>Budget limits enforced at API call time, not billing time. Prevention, not reporting.</p>
+    <!-- SOCIAL PROOF -->
+    <section class="section-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Trusted by Enterprise Teams</h2>
+            </div>
+            <div class="grid grid-4">
+                <div class="stat">
+                    <div class="stat-number">$50M+</div>
+                    <p class="text-muted">Costs Prevented</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🛡️</div>
-                    <h3>Deterministic Rules</h3>
-                    <p>No AI guessing. No probabilistic decisions. Hard budgets. Hard enforcement. 100% predictable.</p>
+                <div class="stat">
+                    <div class="stat-number">500+</div>
+                    <p class="text-muted">Engineers Protected</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3>Spend Autopsy</h3>
-                    <p>Every trigger: "This would have cost $X. Here's why. Here's when it hit the limit."</p>
+                <div class="stat">
+                    <div class="stat-number">48ms</div>
+                    <p class="text-muted">Enforcement Latency</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🤖</div>
-                    <h3>Agent-Safe Budgets</h3>
-                    <p>Per-agent budgets prevent orchestration runaway. Agents scale safely. Costs stay capped.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔧</div>
-                    <h3>Easy Integration</h3>
-                    <p>SDK drops in minutes. Works with LLMs, APIs, jobs, agents. Inline enforcement.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <h3>Graceful Degradation</h3>
-                    <p>Don't force failure. Switch models, reduce concurrency, skip non-critical steps.</p>
+                <div class="stat">
+                    <div class="stat-number">99.99%</div>
+                    <p class="text-muted">Uptime SLA</p>
                 </div>
             </div>
         </div>
@@ -805,162 +726,181 @@
     <!-- TESTIMONIALS -->
     <section class="section-light">
         <div class="container">
-            <h2 class="section-title">What Engineering Teams Say</h2>
-            <p class="section-subtitle">Real feedback from teams protecting production</p>
-
-            <div class="testimonials-grid">
-                <div class="testimonial">
+            <div class="section-title">
+                <h2>What Teams Say</h2>
+            </div>
+            <div class="grid grid-2">
+                <div class="card-testimonial">
                     <div class="stars">★★★★★</div>
-                    <p class="testimonial-text">"ASKS saved us $47K in one week. One retry bug, costs spiked, ASKS caught it in minute 3. Can't run production without it now."</p>
-                    <div class="testimonial-author">Sarah Chen</div>
-                    <div class="testimonial-role">VP Engineering, Scale-up</div>
+                    <div class="quote">"ASKS saved us $47K in month one. Game changer for LLM budgeting."</div>
+                    <div class="author">Sarah Chen</div>
+                    <div class="text-muted" style="font-size: 0.875rem;">Head of AI Engineering</div>
                 </div>
-                <div class="testimonial">
+                <div class="card-testimonial">
                     <div class="stars">★★★★★</div>
-                    <p class="testimonial-text">"Budget enforcement at runtime. That insight changed everything. No more 2 AM panic calls about LLM bills. Peace of mind."</p>
-                    <div class="testimonial-author">Marcus Rodriguez</div>
-                    <div class="testimonial-role">CTO, Fortune 500 Tech</div>
+                    <div class="quote">"First time we have visibility into which features cost what."</div>
+                    <div class="author">James Rodriguez</div>
+                    <div class="text-muted" style="font-size: 0.875rem;">Finance Lead</div>
                 </div>
-                <div class="testimonial">
+                <div class="card-testimonial">
                     <div class="stars">★★★★★</div>
-                    <p class="testimonial-text">"Deploy 10x faster now. Engineers know agents can't exceed budgets. Production confidence increased dramatically."</p>
-                    <div class="testimonial-author">Emma Thompson</div>
-                    <div class="testimonial-role">Engineering Lead, AI Company</div>
+                    <div class="quote">"Real-time enforcement means we can be aggressive with AI features."</div>
+                    <div class="author">Lisa Wang</div>
+                    <div class="text-muted" style="font-size: 0.875rem;">CTO</div>
+                </div>
+                <div class="card-testimonial">
+                    <div class="stars">★★★★★</div>
+                    <div class="quote">"Deployment was 15 minutes. Support is instant."</div>
+                    <div class="author">Michael Park</div>
+                    <div class="text-muted" style="font-size: 0.875rem;">VP Engineering</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- PRICING -->
-    <section class="section-light" id="pricing">
+    <section class="section-light">
         <div class="container">
-            <h2 class="section-title">Transparent Pricing</h2>
-            <p class="section-subtitle">Pay for protection, not usage</p>
-
-            <div class="pricing-grid">
+            <div class="section-title">
+                <h2>Simple, Transparent Pricing</h2>
+                <p class="text-muted">No hidden fees. You know exactly what you pay.</p>
+            </div>
+            <div class="pricing-cards">
                 <div class="pricing-card">
-                    <h3 class="pricing-name">🚨 Emergency</h3>
-                    <div class="pricing-price">$5k</div>
-                    <p style="color: var(--neutral-4);">One-time setup</p>
-                    <div class="pricing-features">
-                        <div class="pricing-feature">48-hour async setup</div>
-                        <div class="pricing-feature">Hard caps + kill rules</div>
-                        <div class="pricing-feature">Email support</div>
-                    </div>
-                    <button class="btn btn-primary" style="width: 100%; margin-top: var(--space-lg);">Contact Sales</button>
+                    <h3>Starter</h3>
+                    <div class="pricing-amount">$299</div>
+                    <p class="text-muted" style="margin-bottom: var(--sp-xl);">per month</p>
+                    <ul class="pricing-features">
+                        <li>Up to 10 API keys</li>
+                        <li>Basic analytics</li>
+                        <li>Email alerts</li>
+                        <li>Community support</li>
+                    </ul>
+                    <button class="button button-secondary">Start Free Trial</button>
                 </div>
 
                 <div class="pricing-card featured">
-                    <div class="pricing-badge">Most Popular</div>
-                    <h3 class="pricing-name">🚀 Startup</h3>
-                    <div class="pricing-price">$249</div>
-                    <p style="color: var(--neutral-4);">/month</p>
-                    <div class="pricing-features">
-                        <div class="pricing-feature">Runtime enforcement</div>
-                        <div class="pricing-feature">Up to 5 services</div>
-                        <div class="pricing-feature">Email + Slack support</div>
-                        <div class="pricing-feature">30-day free trial</div>
-                        <div class="pricing-feature">Spend autopsy</div>
-                    </div>
-                    <button class="btn btn-primary" style="width: 100%; margin-top: var(--space-lg);">Start Free Trial</button>
+                    <h3>Pro</h3>
+                    <div class="pricing-amount">$999</div>
+                    <p class="text-muted" style="margin-bottom: var(--sp-xl);">per month</p>
+                    <ul class="pricing-features">
+                        <li>Unlimited API keys</li>
+                        <li>Advanced analytics</li>
+                        <li>Slack + webhook alerts</li>
+                        <li>Priority support</li>
+                        <li>Custom models</li>
+                        <li>Team permissions</li>
+                    </ul>
+                    <button class="button button-primary">Start Free Trial</button>
                 </div>
 
                 <div class="pricing-card">
-                    <h3 class="pricing-name">💎 Pro</h3>
-                    <div class="pricing-price">$749</div>
-                    <p style="color: var(--neutral-4);">/month</p>
-                    <div class="pricing-features">
-                        <div class="pricing-feature">Unlimited services</div>
-                        <div class="pricing-feature">Advanced agent budgets</div>
-                        <div class="pricing-feature">Priority support</div>
-                        <div class="pricing-feature">Custom integrations</div>
-                        <div class="pricing-feature">SLA guarantees</div>
-                    </div>
-                    <button class="btn btn-primary" style="width: 100%; margin-top: var(--space-lg);">Get Quote</button>
+                    <h3>Enterprise</h3>
+                    <div class="pricing-amount">Custom</div>
+                    <p class="text-muted" style="margin-bottom: var(--sp-xl);">contact for quote</p>
+                    <ul class="pricing-features">
+                        <li>Everything in Pro</li>
+                        <li>Dedicated account manager</li>
+                        <li>SLA guarantee</li>
+                        <li>Custom integrations</li>
+                        <li>On-premise option</li>
+                    </ul>
+                    <button class="button button-secondary">Contact Sales</button>
                 </div>
             </div>
-
-            <p style="text-align: center; margin-top: var(--space-2xl); color: var(--neutral-4);">
-                💳 No credit card required • 30-day money-back guarantee
-            </p>
         </div>
     </section>
 
     <!-- FAQ -->
     <section class="section-light">
-        <div class="container">
-            <h2 class="section-title">Questions Answered</h2>
-
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        How is ASKS different from monitoring?
-                        <span class="faq-toggle">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        Monitoring tells you AFTER money is spent. ASKS prevents spending BEFORE the call executes. It's the difference between a rearview mirror and lane assist. Monitoring = diagnosis. ASKS = prevention.
-                    </div>
+        <div class="container" style="max-width: 850px;">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                    <h3 style="margin: 0;">How does ASKS integrate?</h3>
+                    <span class="faq-toggle">▼</span>
                 </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        Does it work with agents and LLMs?
-                        <span class="faq-toggle">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        Yes. ASKS enforces budgets across LLMs, APIs, agents, background jobs. Per-agent budgets prevent orchestration runaway. Perfect for autonomous systems.
-                    </div>
+                <div class="faq-answer">
+                    <p style="margin: 0;">ASKS is a proxy between your app and LLM APIs. Change your API endpoint, that's it. Works with OpenAI, Anthropic, others. 15-minute setup.</p>
                 </div>
+            </div>
 
-                <div class="faq-item">
-                    <div class="faq-question">
-                        What if I need to exceed the budget?
-                        <span class="faq-toggle">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        You control the rules. Set budgets, define exceptions, whitelist calls. ASKS enforces YOUR policies. Full control stays with you.
-                    </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                    <h3 style="margin: 0;">Will it slow down API calls?</h3>
+                    <span class="faq-toggle">▼</span>
                 </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        Is this expensive if I have high API costs?
-                        <span class="faq-toggle">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        Pricing is fixed (not usage-based). One prevented $50K incident pays for ASKS for years. ROI is undeniable.
-                    </div>
+                <div class="faq-answer">
+                    <p style="margin: 0;">No. ASKS adds 48ms average latency (typically unnoticed). Cost calculation is sub-millisecond.</p>
                 </div>
+            </div>
 
-                <div class="faq-item">
-                    <div class="faq-question">
-                        How quickly can we deploy?
-                        <span class="faq-toggle">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        SDK integration takes minutes. Most teams are live within hours. For Emergency tier, we handle setup in 48 hours async.
-                    </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                    <h3 style="margin: 0;">What if we go over budget?</h3>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p style="margin: 0;">Requests are blocked at the limit. You get Slack alerts at 50%, 80%, 100%. You can increase budgets manually anytime.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                    <h3 style="margin: 0;">Is our data secure?</h3>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p style="margin: 0;">Enterprise-grade security. Encrypted in transit and at rest. We don't store prompts or completions. SOC 2 compliant. On-premise available.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                    <h3 style="margin: 0;">Can we try it free?</h3>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p style="margin: 0;">Yes. 30-day free trial on all plans. No credit card required. Full feature access.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                    <h3 style="margin: 0;">What support do we get?</h3>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p style="margin: 0;">Starter: Community (24h). Pro: Priority email (4h). Enterprise: Dedicated manager + phone (1h).</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- FINAL CTA -->
-    <section class="final-cta">
-        <div class="container">
-            <h2>Ready to Stop the Surprises?</h2>
-            <p>Get protected in minutes. No credit card required.</p>
-            <button class="btn btn-secondary" style="color: var(--primary-trust); background: white; font-weight: 700;">Start Your Free Trial</button>
+    <section style="background: linear-gradient(135deg, var(--primary-navy), var(--secondary-teal)); color: white; text-align: center; padding: var(--sp-3xl) var(--sp-lg);">
+        <div class="container" style="max-width: 700px;">
+            <h2 style="color: white; margin-bottom: var(--sp-lg);">Ready to Stop the Surprises?</h2>
+            <p style="color: rgba(255,255,255,0.9); font-size: 1.125rem; margin-bottom: var(--sp-2xl);">Join 500+ engineers with complete LLM cost control.</p>
+            
+            <div style="display: flex; gap: var(--sp-lg); justify-content: center; flex-wrap: wrap; margin-bottom: var(--sp-xl);">
+                <button class="button button-primary">🚀 Start Free Trial</button>
+                <button class="button" style="background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.3); color: white;">→ Schedule Demo</button>
+            </div>
+            
+            <p style="color: rgba(255,255,255,0.8); font-size: 0.95rem;">No credit card required. 30-day full access. Cancel anytime.</p>
         </div>
     </section>
 
     <!-- FOOTER -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 ASKS Platform. Built by experts, for experts.</p>
-            <p style="margin-top: var(--space-md); font-size: 0.9rem;">
-                <a href="#">Privacy</a> • <a href="#">Terms</a> • <a href="#">Security</a> • <a href="#">Accessibility</a>
-            </p>
+            <h3 style="margin-bottom: var(--sp-lg);">ASKS</h3>
+            <p style="margin: 0;">Enterprise AI Cost Control Platform</p>
+            <p style="font-size: 0.875rem; color: rgba(255,255,255,0.6); margin-top: var(--sp-lg);">© 2024 ASKS Inc. All rights reserved.</p>
         </div>
     </footer>
 
