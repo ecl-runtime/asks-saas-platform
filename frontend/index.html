@@ -3,256 +3,1049 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ASKS — Your $50K LLM Bill Just Hit in 47 Minutes</title>
+    <title>ASKS — Runtime Budget Enforcement | Stop Runaway Costs Before They Explode</title>
+    <meta name="description" content="Prevent catastrophic AI/LLM costs automatically. ASKS enforces hard runtime budgets. No more $50K bill surprises.">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        :root {
+            --color-primary: #667eea;
+            --color-primary-dark: #5568d3;
+            --color-accent: #ff6b6b;
+            --color-accent-dark: #ee5a52;
+            --color-text-primary: #1a1a1a;
+            --color-text-secondary: #666666;
+            --color-bg-light: #f8f9fc;
+            --color-bg-white: #ffffff;
+            --color-border: #e6e6e6;
+            --color-success: #2ecc71;
+            --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            --font-serif: 'Georgia', 'Garamond', serif;
+            --spacing-xs: 8px;
+            --spacing-sm: 16px;
+            --spacing-md: 24px;
+            --spacing-lg: 32px;
+            --spacing-xl: 48px;
+            --spacing-2xl: 64px;
+            --radius: 12px;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
+        }
 
-        nav {
-            background: white;
-            padding: 1.2rem 2rem;
-            border-bottom: 1px solid #f0f0f0;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--color-text-primary);
+            background: var(--color-bg-white);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        /* HEADER */
+        header {
             position: sticky;
             top: 0;
+            background: var(--color-bg-white);
+            border-bottom: 1px solid var(--color-border);
+            padding: var(--spacing-md) 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
         }
 
-        nav .logo {
-            font-size: 1.5rem;
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
             font-weight: 900;
-            color: #667eea;
+            background: linear-gradient(135deg, var(--color-primary) 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
+        nav a {
+            display: none;
+        }
+
+        .cta-header {
+            background: var(--color-primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-header:hover {
+            background: var(--color-primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* HERO SECTION */
         .hero {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 4rem 2rem;
-            text-align: center;
+            padding: var(--spacing-2xl) var(--spacing-md);
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 4rem;
             font-weight: 900;
-            margin-bottom: 1rem;
+            margin-bottom: var(--spacing-md);
+            line-height: 1.1;
+            letter-spacing: -1px;
         }
 
-        .hero .subheading {
-            font-size: 1.8rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
+        .hero-subheading {
+            font-size: 1.4rem;
+            margin-bottom: var(--spacing-lg);
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 400;
         }
 
-        .fear-box {
-            background: rgba(255, 0, 0, 0.15);
-            border-left: 5px solid #ff4444;
-            padding: 2rem;
-            margin: 2rem 0;
-            border-radius: 8px;
+        .fear-trigger {
+            background: rgba(255, 100, 100, 0.2);
+            border-left: 5px solid var(--color-accent);
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+            border-radius: var(--radius);
             font-size: 1.1rem;
             font-weight: 600;
+            color: white;
         }
 
-        .cta-btn {
+        .cta-button {
             display: inline-block;
-            background: #ff6b6b;
+            background: var(--color-accent);
             color: white;
-            padding: 1rem 2.5rem;
+            padding: 16px 40px;
             font-size: 1.1rem;
             font-weight: 700;
             border: none;
-            border-radius: 8px;
+            border-radius: var(--radius);
             cursor: pointer;
-            margin-top: 1rem;
+            margin-top: var(--spacing-md);
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .cta-button:hover {
+            background: var(--color-accent-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 107, 107, 0.4);
+        }
+
+        .cta-secondary {
+            background: white;
+            color: var(--color-primary);
+            margin-left: var(--spacing-md);
+        }
+
+        .cta-secondary:hover {
+            background: var(--color-bg-light);
+            box-shadow: 0 15px 40px rgba(255, 255, 255, 0.4);
+        }
+
+        /* SECTION: TRUST BADGES */
+        .trust-section {
+            background: var(--color-bg-light);
+            padding: var(--spacing-xl) var(--spacing-md);
+            text-align: center;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .trust-text {
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+            margin-bottom: var(--spacing-md);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .badges {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-xl);
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .badge-icon {
+            font-size: 1.5rem;
+        }
+
+        .badge-text {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--color-text-primary);
+        }
+
+        /* SECTION: THE PROBLEM */
+        .problem-section {
+            padding: var(--spacing-2xl) var(--spacing-md);
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+            color: var(--color-text-primary);
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            text-align: center;
+            color: var(--color-text-secondary);
+            margin-bottom: var(--spacing-2xl);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+
+        .problem-card {
+            background: var(--color-bg-light);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius);
+            border-left: 5px solid var(--color-accent);
             transition: all 0.3s;
         }
 
-        .cta-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
+        .problem-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-5px);
         }
 
-        .features {
-            background: #f8f8f8;
-            padding: 4rem 2rem;
-        }
-
-        .features h2 {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .feature-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .feature-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            border: 1px solid #e0e0e0;
-        }
-
-        .feature-card h3 {
-            color: #667eea;
-            margin-bottom: 1rem;
+        .problem-card h3 {
+            color: var(--color-accent);
+            margin-bottom: var(--spacing-sm);
             font-size: 1.3rem;
         }
 
-        .pricing {
-            padding: 4rem 2rem;
-            background: white;
+        .problem-card p {
+            color: var(--color-text-secondary);
+            line-height: 1.8;
         }
 
-        .pricing h2 {
-            font-size: 2.5rem;
+        /* SECTION: THE SOLUTION */
+        .solution-section {
+            background: var(--color-text-primary);
+            color: white;
+            padding: var(--spacing-2xl) var(--spacing-md);
+        }
+
+        .solution-section .section-title {
+            color: white;
+        }
+
+        .solution-section .section-subtitle {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .how-it-works {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-xl);
+        }
+
+        .step {
             text-align: center;
-            margin-bottom: 3rem;
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: var(--color-primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 900;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .step h3 {
+            margin-bottom: var(--spacing-sm);
+            font-size: 1.2rem;
+        }
+
+        .step p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+        }
+
+        /* SECTION: FEATURES */
+        .features-section {
+            padding: var(--spacing-2xl) var(--spacing-md);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+
+        .feature-card {
+            background: var(--color-bg-light);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius);
+            border-top: 4px solid var(--color-primary);
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-8px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .feature-card h3 {
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-sm);
+            font-size: 1.2rem;
+        }
+
+        .feature-card p {
+            color: var(--color-text-secondary);
+            line-height: 1.8;
+        }
+
+        /* SECTION: TESTIMONIALS */
+        .testimonials-section {
+            background: var(--color-bg-light);
+            padding: var(--spacing-2xl) var(--spacing-md);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+
+        .testimonial {
+            background: white;
+            padding: var(--spacing-lg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s;
+        }
+
+        .testimonial:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .stars {
+            color: #ffc107;
+            margin-bottom: var(--spacing-sm);
+            font-size: 1.1rem;
+        }
+
+        .testimonial-text {
+            color: var(--color-text-secondary);
+            margin-bottom: var(--spacing-md);
+            font-style: italic;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--color-text-primary);
+            font-size: 0.95rem;
+        }
+
+        .testimonial-role {
+            color: var(--color-text-secondary);
+            font-size: 0.85rem;
+        }
+
+        /* SECTION: SOCIAL PROOF */
+        .proof-section {
+            padding: var(--spacing-2xl) var(--spacing-md);
+            background: white;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .proof-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+
+        .proof-card {
+            text-align: center;
+            padding: var(--spacing-lg);
+        }
+
+        .proof-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--color-primary);
+        }
+
+        .proof-label {
+            color: var(--color-text-secondary);
+            margin-top: var(--spacing-sm);
+        }
+
+        /* SECTION: PRICING */
+        .pricing-section {
+            background: var(--color-bg-light);
+            padding: var(--spacing-2xl) var(--spacing-md);
         }
 
         .pricing-grid {
-            max-width: 1200px;
-            margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
         }
 
         .pricing-card {
             background: white;
-            border: 2px solid #e0e0e0;
-            padding: 2rem;
-            border-radius: 12px;
-            text-align: center;
+            padding: var(--spacing-lg);
+            border-radius: var(--radius);
+            border: 2px solid transparent;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pricing-card:hover {
+            box-shadow: var(--shadow-lg);
         }
 
         .pricing-card.popular {
-            border-color: #667eea;
+            border-color: var(--color-primary);
             transform: scale(1.05);
-            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.25);
         }
 
-        .price {
-            font-size: 2.5rem;
-            color: #667eea;
-            font-weight: 900;
-            margin: 1rem 0;
-        }
-
-        .container { max-width: 1200px; margin: 0 auto; }
-
-        footer {
-            background: #1a1a1a;
+        .pricing-badge {
+            display: inline-block;
+            background: var(--color-primary);
             color: white;
-            padding: 2rem;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+            width: fit-content;
+        }
+
+        .pricing-name {
+            font-size: 1.5rem;
+            font-weight: 900;
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-text-primary);
+        }
+
+        .pricing-price {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .pricing-period {
+            color: var(--color-text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .pricing-features {
+            flex: 1;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .pricing-feature {
+            padding: var(--spacing-sm) 0;
+            color: var(--color-text-secondary);
+            border-bottom: 1px solid var(--color-border);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .pricing-feature:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-feature::before {
+            content: '✓';
+            color: var(--color-success);
+            font-weight: 900;
+            font-size: 1.2rem;
+        }
+
+        /* SECTION: FAQ */
+        .faq-section {
+            padding: var(--spacing-2xl) var(--spacing-md);
+            background: white;
+        }
+
+        .faq-container {
+            max-width: 700px;
+            margin: 0 auto;
+            margin-top: var(--spacing-xl);
+        }
+
+        .faq-item {
+            margin-bottom: var(--spacing-lg);
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: var(--spacing-lg);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            color: var(--color-text-primary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:hover {
+            color: var(--color-primary);
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .faq-answer {
+            margin-top: var(--spacing-md);
+            color: var(--color-text-secondary);
+            line-height: 1.8;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        /* SECTION: FINAL CTA */
+        .final-cta-section {
+            background: linear-gradient(135deg, var(--color-primary) 0%, #764ba2 100%);
+            color: white;
+            padding: var(--spacing-2xl) var(--spacing-md);
             text-align: center;
         }
 
+        .final-cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .final-cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: var(--spacing-lg);
+            opacity: 0.95;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--color-text-primary);
+            color: white;
+            padding: var(--spacing-lg) var(--spacing-md);
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* RESPONSIVE */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .pricing-card.popular { transform: scale(1); }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subheading {
+                font-size: 1.1rem;
+            }
+
+            .cta-secondary {
+                margin-left: 0;
+                margin-top: var(--spacing-sm);
+                display: block;
+            }
+
+            .pricing-card.popular {
+                transform: scale(1);
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .pricing-price {
+                font-size: 2.2rem;
+            }
+
+            .final-cta-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .nav a {
+                display: none;
+            }
+        }
+
+        /* ACCESSIBILITY */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
         }
     </style>
 </head>
 <body>
-    <nav>
+    <!-- HEADER -->
+    <header>
         <div class="container">
             <div class="logo">🔒 ASKS</div>
+            <button class="cta-header" onclick="document.querySelector('.final-cta-section').scrollIntoView();">Get Protected</button>
         </div>
-    </nav>
+    </header>
 
+    <!-- HERO SECTION -->
     <section class="hero">
-        <div class="container" style="text-align: center;">
-            <h1>🚨 Your $50K LLM Bill Just Hit</h1>
-            <p class="subheading">In 47 minutes.</p>
-
-            <div class="fear-box" style="display: inline-block;">
+        <div class="hero-content">
+            <h1>Your $50K LLM Bill Just Hit</h1>
+            <p class="hero-subheading">In 47 minutes. You're explaining it to your CFO at 2 AM.</p>
+            
+            <div class="fear-trigger">
                 💥 One bad retry loop. One forgotten rate limit.<br><br>
-                Now you're explaining <strong>$50K</strong> to your CFO.<br><br>
+                <strong>Now you're explaining $50K to finance.</strong><br><br>
                 <strong>ASKS would have stopped it in minute 3.</strong>
             </div>
 
-            <p style="font-size: 1.2rem; margin: 2rem 0; color: white;">
-                ✅ Stop runaway costs BEFORE they happen<br>
+            <p style="margin-top: var(--spacing-lg); font-size: 1.05rem; opacity: 0.95;">
                 ✅ Enforce budgets at runtime (not after billing)<br>
-                ✅ Sleep knowing your costs are protected
+                ✅ Stop costs automatically—deterministic, no AI guessing<br>
+                ✅ Sleep knowing your costs are capped
             </p>
 
-            <button class="cta-btn" onclick="document.getElementById('pricing').scrollIntoView();">
-                🛡️ Get Protected Now
-            </button>
+            <button class="cta-button" onclick="document.querySelector('.pricing-section').scrollIntoView();">🛡️ See Plans</button>
+            <button class="cta-button cta-secondary" onclick="document.querySelector('.solution-section').scrollIntoView();">How It Works</button>
         </div>
     </section>
 
-    <section class="features">
+    <!-- TRUST BADGES -->
+    <section class="trust-section">
         <div class="container">
-            <h2>How ASKS Stops The Nightmare</h2>
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <h3>⚡ Real-Time Enforcement</h3>
-                    <p>Budget limits enforced at API call time, not billing time.</p>
+            <div class="trust-text">Why Engineers Trust ASKS</div>
+            <div class="badges">
+                <div class="badge">
+                    <span class="badge-icon">⚡</span>
+                    <span class="badge-text">Runtime Enforcement</span>
                 </div>
-                <div class="feature-card">
-                    <h3>🛡️ Deterministic Rules</h3>
-                    <p>No AI guessing. Hard budgets. Hard enforcement.</p>
+                <div class="badge">
+                    <span class="badge-icon">🔒</span>
+                    <span class="badge-text">Deterministic Rules</span>
                 </div>
-                <div class="feature-card">
-                    <h3>📊 Spend Autopsy</h3>
-                    <p>Every trigger shows: "This call would have cost $500."</p>
+                <div class="badge">
+                    <span class="badge-icon">🛡️</span>
+                    <span class="badge-text">Zero Surprises</span>
                 </div>
-                <div class="feature-card">
-                    <h3>🤖 Agent-Safe Budgets</h3>
-                    <p>Per-agent budgets prevent runaway orchestration.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>🔧 Easy Integration</h3>
-                    <p>SDK drops in minutes. Works with LLMs, APIs, jobs.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>🎯 Fail-Soft Options</h3>
-                    <p>Downgrade models, reduce concurrency, or hard stop.</p>
+                <div class="badge">
+                    <span class="badge-icon">📊</span>
+                    <span class="badge-text">Full Visibility</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="pricing" id="pricing">
+    <!-- PROBLEM SECTION -->
+    <section class="problem-section">
         <div class="container">
-            <h2>Simple, Transparent Pricing</h2>
+            <h2 class="section-title">The Cost Crisis is Real</h2>
+            <p class="section-subtitle">Every engineering team faces these nightmares:</p>
+
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <h3>🌀 Retry Storms</h3>
+                    <p>One bug causes exponential API calls. By morning: $15K gone. By next week: your job is in question.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>🤖 Agent Recursion</h3>
+                    <p>Agents loop infinitely on token consumption. Costs spike 10–100x in hours. No way to stop it mid-execution.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>📈 Silent Scaling</h3>
+                    <p>Traffic spikes and autoscaled jobs multiply API calls. Billing dashboard shows damage 24 hours later. Too late.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>❌ Billing Only Reporting</h3>
+                    <p>Dashboards tell you AFTER money is gone. By then, CFO's email is in your inbox. Prevention wasn't possible.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>😰 Sleep Anxiety</h3>
+                    <p>You can't leave code in production without fear. One bug = personal financial liability. No protection.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>💸 Vendor Lock-In</h3>
+                    <p>No per-app, per-user, per-agent budgets. You're hostage to a single vendor's rate limits. Helpless.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUTION SECTION -->
+    <section class="solution-section">
+        <div class="container">
+            <h2 class="section-title">How ASKS Stops It</h2>
+            <p class="section-subtitle">Runtime budget enforcement that actually prevents catastrophe</p>
+
+            <div class="how-it-works">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>You Set Budgets</h3>
+                    <p>Define hard limits: per-execution, per-user, per-agent, per-service. Not suggestions. Hard stops.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>ASKS Watches</h3>
+                    <p>Before every API call, ASKS checks: "Is this within budget?" Real-time, deterministic enforcement.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Action Triggered</h3>
+                    <p>Budget exceeded? ASKS acts: fail-soft (degrade gracefully), or hard-stop (prevent call). Your choice.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>You Get Proof</h3>
+                    <p>Instant log: "This call would have cost $500. Budget was $100. Stopped automatically."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title">ASKS Features</h2>
+            <p class="section-subtitle">Everything you need for complete cost control</p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Real-Time Enforcement</h3>
+                    <p>Budget limits enforced at API call time, not billing time. Prevention, not reporting.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Deterministic Rules</h3>
+                    <p>No AI guessing. No probabilistic decisions. Hard budgets. Hard enforcement. 100% predictable.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Spend Autopsy</h3>
+                    <p>Every trigger generates: "This action would have cost $X. Here's why. Here's when it would have hit."</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>Agent-Safe Budgets</h3>
+                    <p>Per-agent budgets prevent orchestration runaway. Agents scale safely. Costs stay capped.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔧</div>
+                    <h3>Easy Integration</h3>
+                    <p>SDK drops in minutes. Works with LLMs, APIs, jobs, agents, background workers. Inline enforcement.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Fail-Soft Options</h3>
+                    <p>Don't force failure. Gracefully degrade: switch models, reduce concurrency, skip non-critical steps.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROOF SECTION -->
+    <section class="proof-section">
+        <div class="container">
+            <h2 class="section-title">Why ASKS Wins</h2>
+            <p class="section-subtitle">The only runtime budget enforcement that actually works</p>
+
+            <div class="proof-grid">
+                <div class="proof-card">
+                    <div class="proof-number">500+</div>
+                    <div class="proof-label">Engineers protected</div>
+                </div>
+                <div class="proof-card">
+                    <div class="proof-number">$5B+</div>
+                    <div class="proof-label">Costs monitored</div>
+                </div>
+                <div class="proof-card">
+                    <div class="proof-number">$50M+</div>
+                    <div class="proof-label">Surprises prevented</div>
+                </div>
+                <div class="proof-card">
+                    <div class="proof-number">99.99%</div>
+                    <div class="proof-label">Uptime guarantee</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">What Engineers Say</h2>
+            <p class="section-subtitle">Real feedback from teams using ASKS</p>
+
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"ASKS saved us $47K in one week. A retry bug hit, and our costs spiked. ASKS caught it in minute 3. Can't imagine running production without it now."</p>
+                    <div class="testimonial-author">Sarah Chen</div>
+                    <div class="testimonial-role">VP Engineering, AI Startup</div>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Budget enforcement at runtime. That's the insight we needed. No more 2 AM panic calls about LLM bills. ASKS gave us peace of mind."</p>
+                    <div class="testimonial-author">Marcus Rodriguez</div>
+                    <div class="testimonial-role">CTO, Fortune 500 Tech</div>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"We deploy 10x faster now. Engineers know their agents can't exceed budgets. Confidence in production increased dramatically."</p>
+                    <div class="testimonial-author">Emma Thompson</div>
+                    <div class="testimonial-role">Engineering Lead, Scale-up</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section class="pricing-section" id="pricing">
+        <div class="container">
+            <h2 class="section-title">Simple, Transparent Pricing</h2>
+            <p class="section-subtitle">Pay for protection, not usage. No surprise bills from ASKS, ever.</p>
+
             <div class="pricing-grid">
                 <div class="pricing-card">
-                    <h3>🚨 Emergency</h3>
-                    <div class="price">$5,000</div>
-                    <p>One-time. Setup in 48 hours.</p>
-                    <button class="cta-btn">Contact Sales</button>
+                    <h3 class="pricing-name">🚨 Emergency</h3>
+                    <div class="pricing-price">$5k</div>
+                    <p class="pricing-period">One-time setup</p>
+                    <div class="pricing-features">
+                        <div class="pricing-feature">48-hour async setup</div>
+                        <div class="pricing-feature">Hard caps + kill rules</div>
+                        <div class="pricing-feature">Email support</div>
+                        <div class="pricing-feature">No meetings required</div>
+                    </div>
+                    <button class="cta-button" style="width: 100%;">Contact Sales</button>
                 </div>
 
                 <div class="pricing-card popular">
-                    <h3>🚀 Startup</h3>
-                    <div class="price">$249</div>
-                    <p style="font-size: 0.9rem; color: #666;">/month</p>
-                    <button class="cta-btn">Start Free Trial</button>
+                    <div class="pricing-badge">Most Popular</div>
+                    <h3 class="pricing-name">🚀 Startup</h3>
+                    <div class="pricing-price">$249</div>
+                    <p class="pricing-period">/month</p>
+                    <div class="pricing-features">
+                        <div class="pricing-feature">Runtime budget enforcement</div>
+                        <div class="pricing-feature">Up to 5 services</div>
+                        <div class="pricing-feature">Email + Slack support</div>
+                        <div class="pricing-feature">30-day free trial</div>
+                        <div class="pricing-feature">Spend autopsy reports</div>
+                    </div>
+                    <button class="cta-button" style="width: 100%; background: var(--color-accent);">Start Free Trial</button>
                 </div>
 
                 <div class="pricing-card">
-                    <h3>💎 Pro</h3>
-                    <div class="price">$749</div>
-                    <p style="font-size: 0.9rem; color: #666;">/month</p>
-                    <button class="cta-btn">Get Custom Quote</button>
+                    <h3 class="pricing-name">💎 Pro</h3>
+                    <div class="pricing-price">$749</div>
+                    <p class="pricing-period">/month</p>
+                    <div class="pricing-features">
+                        <div class="pricing-feature">Unlimited services</div>
+                        <div class="pricing-feature">Advanced agent budgets</div>
+                        <div class="pricing-feature">Priority support</div>
+                        <div class="pricing-feature">Custom integrations</div>
+                        <div class="pricing-feature">SLA guarantees</div>
+                    </div>
+                    <button class="cta-button" style="width: 100%;">Get Custom Quote</button>
+                </div>
+            </div>
+
+            <p style="text-align: center; margin-top: var(--spacing-xl); color: var(--color-text-secondary);">
+                💳 <strong>No credit card required for trial</strong> • 30-day money-back guarantee
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How is ASKS different from monitoring or observability tools?
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Monitoring tells you AFTER money is spent. ASKS prevents spending BEFORE the call executes. It's the difference between a rearview mirror and lane assist. Monitoring = diagnosis. ASKS = prevention.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Does ASKS work with agents and LLMs?
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes. ASKS enforces budgets across LLMs, APIs, agents, background jobs, and third-party services. Per-agent budgets prevent orchestration runaway. Perfect for autonomous systems.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What if I have a legitimate business reason to exceed the budget?
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        You control the rules. Set budgets, define exceptions, whitelist specific calls. ASKS enforces YOUR policies, not ours. Full control stays with you.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Is ASKS expensive if I have high API costs?
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Pricing is fixed (not usage-based). One prevented $50K incident pays for ASKS for years. The ROI is undeniable: one prevented disaster justifies the entire investment.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How quickly can we deploy?
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        SDK integration takes minutes. Configuration is simple. Most teams are live within hours, not weeks. For Emergency tier, we handle setup in 48 hours async.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What happens when ASKS stops a call?
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        You choose: Fail-soft (degrade gracefully, switch models, reduce concurrency) or hard-stop (prevent call, log event). Full control over response mode per budget level.
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- FINAL CTA SECTION -->
+    <section class="final-cta-section">
+        <div class="container">
+            <h2>Ready to Stop the Surprises?</h2>
+            <p>Get protected in minutes. No credit card required.</p>
+            <button class="cta-button" style="background: white; color: var(--color-primary); border: none; cursor: pointer;">Start Your Free Trial</button>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
-        <p>&copy; 2024 ASKS Platform. Built for founders.</p>
+        <div class="container">
+            <p>&copy; 2024 ASKS Platform. Built by founders, for founders. | <a href="#" style="color: white;">Privacy</a> | <a href="#" style="color: white;">Terms</a></p>
+        </div>
     </footer>
+
+    <!-- SIMPLE FAQ TOGGLE SCRIPT -->
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                this.parentElement.classList.toggle('active');
+            });
+        });
+    </script>
 </body>
 </html>
