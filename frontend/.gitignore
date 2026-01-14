@@ -1,0 +1,35 @@
+# Environment
+.env
+.env.local
+*.pyc
+__pycache__/
+
+# Keys and secrets
+config/razorpay.json
+config/wise.json
+config/secrets.json
+
+# Logs
+logs/
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python
+venv/
+env/
+*.egg-info/
+dist/
+build/
+
+# Node (if using frontend tools)
+node_modules/
+package-lock.json
+
