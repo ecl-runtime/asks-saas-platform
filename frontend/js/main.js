@@ -1,4 +1,4 @@
-const BACKEND_URL = "https://asks-backend.onrender.com";
+const BACKEND_URL = "https://asks-saas-platform.onrender.com";
 
 document.getElementById('intentForm').addEventListener('submit', async function(e) {
     e.preventDefault();
